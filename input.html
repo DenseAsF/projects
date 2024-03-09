@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Input Example</title>
+  <style>
+    /* Remove border from input */
+    #userInput {
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- No input field in HTML -->
+<button onclick="assignVariable()">Assign</button>
+
+<script>
+function assignVariable() {
+  // Use prompt to get input from the user
+  let userInput = prompt("Please enter something:");
+  
+  // Check if the user provided input
+  if (userInput !== null) {
+    // Display the input in the console
+    console.log("User input:", userInput);
+  }
+}
+</script>
+
+</body>
+</html>
