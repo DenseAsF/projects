@@ -1,31 +1,989 @@
 <!DOCTYPE html>
+
 <html>
 <head>
-  <title>User Input Example</title>
-  <style>
-    /* Remove border from input */
-    #userInput {
-      border: none;
-    }
-  </style>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Yay</title>
 </head>
+
+<style>
+
+.first p{
+  display: inline-block;
+  margin-left:30px;
+  font-size:50px;
+}
+
+
+.second{
+  display: inline-block;
+  position:absolute;
+  top:150px;
+}
+
+
+
+.third p{
+  display: inline-block;
+  margin-left:30px;
+  font-size:50px;
+}
+
+
+.third{
+  display: inline-block;
+  position:absolute;
+  top:300px;
+}
+
+
+
+.second p{
+  display: inline-block;
+  margin-left:30px;
+  font-size:50px;
+}
+
+
+
+
+
+.u1 p{
+  display: inline-block;
+  margin-left:20px;
+  font-size:50px;
+}
+
+.u1 {
+  top:20px;
+  position:absolute;
+}
+
+
+.u2 p{
+  display: inline-block;
+  margin-left:20px;
+  font-size:50px;
+}
+
+.u2 {
+  top:160px;
+  position:absolute;
+}
+
+.u3 p{
+  display: inline-block;
+  margin-left:20px;
+  font-size:50px;
+}
+
+.u3 {
+  top:310px;
+  position:absolute;
+}
+
+.num1 {
+  top:130px;
+  position:absolute;
+  margin-left:35px;
+}
+
+.num2 {
+  top:275px;
+  position:absolute;
+  margin-left:35px;
+}
+
+.num3 {
+  top:425px;
+  position:absolute;
+  margin-left:35px;
+}
+
+.q1{ 
+  left:250px;
+  position:absolute;
+  top:750px; 
+}
+.q1num{ 
+  left:250px;
+  position:absolute;
+  top:830px;  
+}
+
+
+.q3{ 
+  left:250px;
+  position:absolute;
+  top:1250px; 
+}
+.q3num{ 
+  left:250px;
+  position:absolute;
+  top:1330px;  
+}
+
+.q2{ 
+  left:350px;
+  position:absolute;
+  top:1000px; 
+}
+.q2num{ 
+  left:350px;
+  position:absolute;
+  top:1080px;  
+}
+.q4{ 
+  left:250px;
+  position:absolute;
+  top:1500px; 
+  padding-bottom:200px;
+}
+.q4num{ 
+  left:250px;
+  position:absolute;
+  top:1580px;  
+}
+.q5{ 
+  left:100px;
+  position:absolute;
+  top:1750px; 
+  padding-bottom:300px;
+}
+.q5num{ 
+  left:100px;
+  position:absolute;
+  top:1830px;  
+}
+
+
+
+#check{
+  top:530px;
+  position:absolute;
+  left:350px;
+  font-size:50px;
+  border:none;
+  background-color:green;
+  color:white;
+  border-radius:30px;
+  width:300px;
+}
+#reset{
+  top:550px;
+  position:absolute;
+  left:100px;
+  font-size:20px;
+  border:none;
+  background-color:red;
+  color:white;
+  border-radius:30px;
+  width:200px;
+}
+#hint{
+  top:550px;
+  position:absolute;
+  left:700px;
+  font-size:20px;
+  border:none;
+  background-color:orange;
+  color:white;
+  border-radius:30px;
+  width:200px;
+}
+
+#again{
+  top:800px;
+  position:absolute;
+  left:350px;
+  font-size:50px;
+  border:none;
+  background-color:green;
+  color:white;
+  border-radius:30px;
+  width:300px;
+  display:none;
+}
+
+
+</style>
+
+
 <body>
-
-<!-- No input field in HTML -->
-<button onclick="assignVariable()">Assign</button>
-
-<script>
-function assignVariable() {
-  // Use prompt to get input from the user
-  let userInput = prompt("Please enter something:");
   
-  // Check if the user provided input
-  if (userInput !== null) {
-    // Display the input in the console
-    console.log("User input:", userInput);
+  
+  <div class="first">   
+    <p id="f1" style="position:absolute;left:7px;"></p>  
+     <p id="f2" style="position:absolute;left:90px;"></p> 
+  <p id="f3" style="position:absolute;left:173px;"></p> 
+ <p id="f4" style="position:absolute;left:258px;"></p> 
+    
+<p id="f5" style="position:absolute;left:425px;;"></p>   
+ <p id="f6" style="position:absolute;left:508px;"></p> 
+<p id="f7" style="position:absolute;left:593px;;"></p> 
+    <p id="f7a" style="position:absolute;left:682px;;"></p> 
+    
+  </div>
+  
+  <div class="second">
+    <p id="f8" style="position:absolute;left:7px;"></p>  
+     <p id="s5" style="position:absolute;left:90px;"></p> 
+  <p id="s4" style="position:absolute;left:173px;"></p> 
+    
+  <p id="t4" style="position:absolute;left:258px;;"></p>
+      <p id="f9" style="position:absolute;left:425px;;"></p>
+    <p id="f10" style="position:absolute;left:508px;;"></p>
+
+        <p id="f9a" style="position:absolute;left:682px;;"></p> 
+        <p id="f10a" style="position:absolute;left:765px;;"></p> 
+     <p id="f11" style="position:absolute;left:845px;;"></p> 
+    
+  </div>
+  
+  <div class="third">   
+    <p id="t12" style="position:absolute;left:7px;"></p>  
+     <p id="t9" style="position:absolute;left:90px;"></p> 
+  <p id="t13" style="position:absolute;left:173px;"></p> 
+ <p id="t14" style="position:absolute;left:258px;"></p> 
+  
+  </div>
+  
+  
+  <div class="u1">
+    
+     <p style="position:absolute;left:7px;">__</p>  
+     <p style="position:absolute;left:90px;">__</p> 
+  <p style="position:absolute;left:173px;">__</p> 
+ <p style="position:absolute;left:258px;">__</p> 
+    
+       <p  style="position:absolute;left:425px;">__</p> 
+ <p  style="position:absolute;left:508px;">__</p> 
+<p style="position:absolute;left:593px;;">__</p>
+    <p style="position:absolute;left:682px;;">__</p>
+    
+  </div>
+  
+  <div class="u2">
+    
+    <p  style="position:absolute;left: 7px;">__</p> 
+<p style="position:absolute;left:90px;">__</p> 
+    <p style="position:absolute;left:173px;">__</p> 
+    
+  <p style="position:absolute;left:258px;;">__</p>
+      <p style="position:absolute;left:425px;;">__</p>
+    <p style="position:absolute;left:508px;;">__</p>
+
+        <p style="position:absolute;left:682px;;">__</p>    
+        <p style="position:absolute;left:765px;;">__</p> 
+        <p style="position:absolute;left:845px;;">__</p> 
+  </div>
+  
+  <div class="u3">
+    
+     <p style="position:absolute;left:7px;">__</p>  
+     <p style="position:absolute;left:90px;">__</p> 
+  <p style="position:absolute;left:173px;">__</p> 
+ <p style="position:absolute;left:258px;">__</p> 
+  </div>
+  
+  
+  
+   <div class="num1">
+     <p style="position:absolute;left:7px;">1</p>  
+     <p style="position:absolute;left:90px;">2</p> 
+  <p style="position:absolute;left:173px;">3</p> 
+ <p style="position:absolute;left:258px;">3</p> 
+<p style="position:absolute;left:425px;;">4</p> 
+     
+       
+ <p  style="position:absolute;left:518px;">5</p> 
+<p style="position:absolute;left:597px;;">6</p> 
+     <p style="position:absolute;left:686px;;">7</p> 
+    
+     
+  </div>
+  
+  <div class="num2">   
+     <p style="position:absolute;left:7px;">5</p>  
+     <p style="position:absolute;left:90px;">6</p> 
+  <p style="position:absolute;left:173px;">1</p>   
+      <p style="position:absolute;left:258px;;">8</p>
+    
+      <p style="position:absolute;left:425px;;">9</p>
+    <p style="position:absolute;left:508px;;">8</p>
+
+        <p style="position:absolute;left:690px;;">9</p> 
+    
+        <p style="position:absolute;left:765px;;">10</p> 
+    
+        <p style="position:absolute;left:845px;;">11</p> 
+  </div>
+  <div class="num3">
+  <p style="position:absolute;left:7px;">12</p>  
+     <p style="position:absolute;left:90px;">9</p> 
+  <p style="position:absolute;left:173px;">13</p> 
+ <p style="position:absolute;left:258px;">14</p> 
+  </div>
+  <div class=box>
+  <div class=q1>
+  <input type="text" id="s1" style="border:3px solid black;font-size:50px; position:absolute; width:70px;" maxlength="1">
+  <input type="text" id="h1" style="border:3px solid black;font-size:50px; position:absolute; width:70px; left:100px;" maxlength="1">
+  <input type="text" id="e1" style="border:3px solid black;font-size:50px; position:absolute; width:70px; left:200px;" maxlength="1">
+  <input type="text" id="L1" style="border:3px solid black;font-size:50px; position:absolute; width:70px; left:300px;" maxlength="1">
+  <input type="text" id="l2" style="border:3px solid black;font-size:50px; position:absolute; width:70px; left:400px;" maxlength="1">   
+  </div>
+  
+  <h1 style="position:absolute; top:650px; left:320px;">Exterior of an egg.</h1>
+     
+  
+  <div class="q1num">
+    <p style="position:absolute; left:30px;">3</p>
+    <p style="position:absolute; left:130px;">5</p>
+    <p style="position:absolute; left:230px;">2</p>
+    <p style="position:absolute; left:330px;">1</p>
+    <p style="position:absolute; left:430px;">1</p>    
+  </div>
+   
+  <h1 style="position:absolute; top:895px; left:210px;">It&apos;s no ___ crying over spilt milk.</h1>
+     
+  <div class=q2>
+  <input type="text" id="u1" style="border:3px solid black;font-size:50px; position:absolute; width:70px;" maxlength="1">
+  <input type="text" id="s2" style="border:3px solid black;font-size:50px; position:absolute; width:70px; left:100px;" maxlength="1">
+  <input type="text" id="e2" style="border:3px solid black;font-size:50px; position:absolute; width:70px; left:200px;" maxlength="1">
+  </div>
+    <div class="q2num">
+    <p style="position:absolute; left:30px;">10</p>
+    <p style="position:absolute; left:130px;">3</p>
+    <p style="position:absolute; left:230px;">2</p>
+    </div>
+  
+  <h1 style="position:absolute; top:1140px; left:150px;">Important ingredient in making bread.</h1>
+     
+  <div class=q3>
+  <input type="text" id="y1" style="border:3px solid black;font-size:50px; position:absolute; width:70px;" maxlength="1">
+  <input type="text" id="e3" style="border:3px solid black;font-size:50px; position:absolute; width:70px; left:100px;" maxlength="1">
+  <input type="text" id="a1" style="border:3px solid black;font-size:50px; position:absolute; width:70px; left:200px;" maxlength="1">
+  <input type="text" id="s3" style="border:3px solid black;font-size:50px; position:absolute; width:70px; left:300px;" maxlength="1">
+  <input type="text" id="t1" style="border:3px solid black;font-size:50px; position:absolute; width:70px; left:400px;" maxlength="1">   
+  </div>
+  <div class="q3num">
+    <p style="position:absolute; left:30px;">14</p>
+    <p style="position:absolute; left:130px;">2</p>
+    <p style="position:absolute; left:230px;">6</p>
+    <p style="position:absolute; left:330px;">3</p>
+    <p style="position:absolute; left:430px;">4</p>    
+  </div>
+  
+   <h1 style="position:absolute; top:1380px; left:150px;">Don&apos;t speak about it. It&apos;s a _____ topic.</h1>
+     
+  
+   <div class=q4>
+  <input type="text" id="t2" style="border:3px solid black;font-size:50px; position:absolute; width:70px;" maxlength="1">
+  <input type="text" id="a2" style="border:3px solid black;font-size:50px; position:absolute; width:70px; left:100px;" maxlength="1">
+  <input type="text" id="b1" style="border:3px solid black;font-size:50px; position:absolute; width:70px; left:200px;" maxlength="1">
+  <input type="text" id="o1" style="border:3px solid black;font-size:50px; position:absolute; width:70px; left:300px;" maxlength="1">
+  <input type="text" id="o2" style="border:3px solid black;font-size:50px; position:absolute; width:70px; left:400px;" maxlength="1">   
+  </div>
+  <div class="q4num">
+    <p style="position:absolute; left:30px;">4</p>
+    <p style="position:absolute; left:130px;">6</p>
+    <p style="position:absolute; left:230px;">12</p>
+    <p style="position:absolute; left:330px;">9</p>
+    <p style="position:absolute; left:430px;">9</p>    
+  </div>
+  
+  
+   <h1 style="position:absolute; top:1630px; left:235px;">I drew it all myself, ________</h1>
+     
+  
+   <div class=q5>
+  <input type="text" id="f1a" style="border:3px solid black;font-size:50px; position:absolute; width:70px;" maxlength="1">
+  <input type="text" id="r1" style="border:3px solid black;font-size:50px; position:absolute; width:70px; left:100px;" maxlength="1">
+  <input type="text" id="e4" style="border:3px solid black;font-size:50px; position:absolute; width:70px; left:200px;" maxlength="1">
+  <input type="text" id="e5" style="border:3px solid black;font-size:50px; position:absolute; width:70px; left:300px;" maxlength="1">
+  <input type="text" id="h2" style="border:3px solid black;font-size:50px; position:absolute; width:70px; left:400px;" maxlength="1">   
+  <input type="text" id="a3" style="border:3px solid black;font-size:50px; position:absolute; width:70px; left:500px;" maxlength="1">
+  <input type="text" id="n1" style="border:3px solid black;font-size:50px; position:absolute; width:70px; left:600px;" maxlength="1">
+  <input type="text" id="d1" style="border:3px solid black;font-size:50px; position:absolute; width:70px; left:700px;" maxlength="1">
+   
+  </div>
+  <div class="q5num">
+    <p style="position:absolute; left:30px;">8</p>
+    <p style="position:absolute; left:130px;">11</p>
+    <p style="position:absolute; left:230px;">2</p>
+    <p style="position:absolute; left:330px;">2</p>
+    <p style="position:absolute; left:430px;">5</p>    
+    <p style="position:absolute; left:530px;">6</p>    
+    <p style="position:absolute; left:630px;">7</p>    
+    <p style="position:absolute; left:730px;">13</p>    
+
+  </div>
+  </div>
+  <button id="check" onclick="pressed()">CHECK</button>
+    <button id="reset" onclick="resett()">RESET</button>
+    <button id="hint" onclick="hinthint()">HINT</button>
+
+  <h1 id=ending style='color:green; font-size:100; position: absolute; top:600px; left:350px; display:none;'>Game Finished</h1>
+  <button id=again onclick="againagain()">RESTART</button>
+</body>
+
+<script> 
+
+function hinthint(){
+  let randomNumber = Math.floor(Math.random() * 3) + 1;
+  
+  if(randomNumber===1){
+  let input12=document.querySelector("#s3");
+  input12.value='S'
+  upA2();
+ 
+  }
+  if(randomNumber===2){
+  let input14=document.querySelector("#t2");
+  input14.value='T'
+  upA2();
+  
+}
+  
+  if(randomNumber===3){
+ let input9=document.querySelector("#y1");
+  input9.value='Y'
+  upA2();
+ 
+}
+  
+  document.querySelector('#hint').disabled=true;
+
+}
+
+
+function againagain(){
+  resett();
+    document.querySelector('#check').style.display='block';
+    document.querySelector('#reset').style.display='block';
+    document.querySelector('#ending').style.display="none";
+    document.querySelector('#again').style.display="none";
+    document.querySelector(".box").style.display='block';   
+  document.querySelector('#hint').style.display="block";
+  document.querySelector('#hint').disabled=false;
+}
+
+
+
+function resett(){
+  
+   let inputs = document.querySelectorAll('input[type="text"]');  
+  inputs.forEach(input => {
+    input.value='';
+    input.style.borderColor='black';
+    input.disabled=false;
+    
+    return;
+    
+  });
+  
+  f3.innerHTML='';
+    f4.innerHTML='';
+    f6.innerHTML='';    
+    f8.innerHTML=''; 
+    f1.innerHTML= '';
+  s4.innerHTML='';
+  f2.innerHTML='';
+      f1.innerHTML= '';  
+  s4.innerHTML='';
+  f10a.innerHTML='';
+  t14.innerHTML='';
+  f7.innerHTML='';
+  s5.innerHTML='';
+  f5.innerHTML='';
+   t12.innerHTML='';
+  f9.innerHTML='';
+   f9a.innerHTML='';
+  t9.innerHTML='';
+  t4.innerHTML='';
+         f10.innerHTML='';
+  f11.innerHTML='';
+  t13.innerHTML='';
+  f7a.innerHTML='';
+  document.querySelector('#hint').disabled=false;
+
+}
+
+//setInterval(upA2,1);
+
+function pressed(){
+  upA2();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+     function upA2(){
+  let input1=document.querySelector("#s1");
+let input2=document.querySelector("#h1");
+let input3=document.querySelector("#e1");
+let input4=document.querySelector("#L1");
+let input5=document.querySelector("#l2");
+let input6=document.querySelector("#u1");
+let input7=document.querySelector("#s2");
+let input8=document.querySelector("#e2");
+let input9=document.querySelector("#y1");
+let input10=document.querySelector("#e3");
+let input11=document.querySelector("#a1");
+let input12=document.querySelector("#s3");
+let input13=document.querySelector("#t1");
+let input14=document.querySelector("#t2");
+let input15=document.querySelector("#a2");
+let input16=document.querySelector("#b1");
+let input17=document.querySelector("#o1");
+let input18=document.querySelector("#o2");
+let input19=document.querySelector("#f1a");
+ let input20=document.querySelector("#r1");
+ let input21=document.querySelector("#e4");
+ let input22=document.querySelector("#e5");
+ let input23=document.querySelector("#h2");
+ let input24=document.querySelector("#a3");
+let input25=document.querySelector("#n1");
+ let input26=document.querySelector("#d1");
+    
+ let s1=input1.value; 
+let h1=input2.value;
+let e1=input3.value; 
+let l1=input4.value;
+let l2=input5.value;
+let u1=input6.value;
+let s2=input7.value;
+let e2=input8.value;
+let y1=input9.value;
+let e3=input10.value;
+let a1=input11.value;
+let s3=input12.value;
+let t1=input13.value;
+let t2=input14.value;
+let a2=input15.value;
+let b1=input16.value;
+let o1=input17.value;
+let o2=input18.value;
+let f1a=input19.value;       
+let r1=input20.value;
+let e4=input21.value;
+let e5=input22.value;
+let h2=input23.value;
+let a3=input24.value;
+       let n1=input25.value;
+let d1=input26.value;
+       
+    
+  if(s1=="s" || s1=="S"){    
+  f3.innerHTML=s1;
+  input7.value=s1;
+  s2=s1; 
+       f4.innerHTML=s1;
+    input7.disabled=true;   
+input1.style.borderColor="green";
+  input7.disabled=true;   
+input7.style.borderColor="green";
+  }
+       else{
+         input1.value="";
+       }
+       
+if(s2=="s" || s2=="S"){   
+  input7.disabled=true; 
+  input1.disabled=true;  
+  input12.disabled=true;  
+    f3.innerHTML=s2;
+    f4.innerHTML=s2;
+    input1.value=s2;
+    input12.value=s2;
+    s1=s2; 
+    s3=s2; 
+input1.style.borderColor="green";
+input7.style.borderColor="green";
+input12.style.borderColor="green";
+  }
+       else{
+         input7.value="";
+       }
+       
+if(s3=="s" || s3=="S"){   
+  input7.disabled=true; 
+  input1.disabled=true;  
+  input12.disabled=true;  
+    f3.innerHTML=s3;
+    f4.innerHTML=s3;
+    input1.value=s3;
+    input7.value=s3;
+    s1=s3; 
+    s2=s3; 
+input1.style.borderColor="green";
+input7.style.borderColor="green";
+input12.style.borderColor="green";
+  }
+       else{
+         input12.value="";
+       }
+       
+       
+       if(h1=="h" || h1=="H"){     
+    f6.innerHTML=h1;
+    input23.value=h1;
+    h2=h1;  
+       f8.innerHTML=h1; 
+    input2.disabled=true;  
+  input2.style.borderColor="green" ;
+  }
+       else{
+         input2.value="";
+       }
+       
+if(h2=="h" || h2=="H"){     
+    f6.innerHTML=h2;
+       f8.innerHTML=h2; 
+    input23.disabled=true; 
+    input2.value=h2;
+   h1=h2;  
+   input23.style.borderColor="green" ;
+   input2.disabled=true;
+  input23.disabled=true;
+  input2.style.borderColor="green" ;
+  }
+       else{
+         input23.value="";
+       }
+       
+       
+        if(e1=="e" || e1=="E"){     
+    f2.innerHTML=e1;
+         input10.value=e1;
+         input8.value=e1;
+         e10=e1;
+         e3=e1;             
+         input3.disabled=true;
+         input8.disabled=true;
+         input10.disabled=true;
+          input8.style.borderColor="green" ;  
+          input3.style.borderColor="green" ;
+          input10.style.borderColor="green" ;
+
+  }      
+       else{
+         input3.value="";
+       }
+       
+       if(e2=="e" || e2=="E"){     
+        f2.innerHTML=e2;
+         input10.value=e2;
+         input8.value=e2;
+         e1=e2;
+         e3=e2;             
+         input3.disabled=true;
+         input8.disabled=true;
+         input10.disabled=true;
+          input8.style.borderColor="green" ;  
+          input3.style.borderColor="green" ;
+          input10.style.borderColor="green" ;
+
+  }      
+       else{
+         input8.value="";
+       }
+       if(e3=="e" || e3=="E"){     
+    f2.innerHTML=e3;
+         input3.value=e3;
+         input8.value=e3;
+          input21.value=e3;
+         e1=e3;
+         e2=e3; 
+         e4=e3; 
+         input3.disabled=true;
+         input8.disabled=true;
+         input10.disabled=true;
+          input8.style.borderColor="green" ;  
+          input3.style.borderColor="green" ;
+input10.style.borderColor="green" ;
+  }      
+       else{
+         input10.value="";
+       }
+       
+       if(e4=="e" || e4=="E"){     
+    f2.innerHTML=e4;
+         input3.value=e4;
+         input8.value=e4;
+         input10.value=e4; 
+         input22.value=e4; 
+         e1=e4;
+         e2=e4;   
+          e3=e4;
+           e5=e4;
+         input3.disabled=true;
+         input8.disabled=true;
+         input10.disabled=true;
+         input21.disabled=true;
+input8.style.borderColor="green" ;  
+          input3.style.borderColor="green" ;
+input10.style.borderColor="green" ;
+          input21.style.borderColor="green" ;      
+  }      
+       else{
+         input21.value="";
+       }
+       if(e5=="e" || e5=="E"){     
+    f2.innerHTML=e5;
+         input3.value=e5;
+         input8.value=e5;
+         input10.value=e5; 
+         input21.value=e5; 
+         e1=e5;
+         e2=e5;   
+          e3=e5;
+         e4=e5;
+         input3.disabled=true;
+         input8.disabled=true;
+         input10.disabled=true;
+         input21.disabled=true;
+         input22.disabled=true;
+input8.style.borderColor="green" ;  
+          input3.style.borderColor="green" ;
+input10.style.borderColor="green" ;
+          input21.style.borderColor="green" ; 
+         input22.style.borderColor="green" ; 
+  }      
+       else{
+         input22.value="";
+       }
+       
+if (l1 == "l" || l1 == "L") {
+    input4.disabled= true;
+    input5.value= l1; 
+    l2= l1;
+    f1.innerHTML= l1;  
+  s4.innerHTML=l1;
+    input5.disabled= true; 
+  input5.style.borderColor="green" ;
+  input4.style.borderColor="green" ;
+} else {
+    input4.value = "";
+}              
+       if(l2=="l" || l2=="L"){
+        input4.disabled=true;
+         f1.innerHTML=l2;
+         s4.innerHTML=l2;
+         input4.value=l2;
+         l1 = l2;
+         input5.disabled=true;
+         input5.style.borderColor="green" ;
+         input4.style.borderColor="green" ;
+       }
+       else{        
+         input5.value="";        
+       }
+       
+     
+
+if(u1=="u" || u1=="U"){    
+       f10a.innerHTML=u1;
+    input6.disabled=true;   
+input6.style.borderColor="green"  ; 
+  }
+       else{
+         input6.value="";
+       }
+       
+
+if(y1=="y" || y1=="Y"){    
+       t14.innerHTML=y1;
+    input9.disabled=true;   
+input9.style.borderColor="green"  ; 
+  }
+       else{
+         input9.value="";
+       }
+       
+     
+
+if(a1=="a" || a1=="A"){    
+       f7.innerHTML=a1;
+  s5.innerHTML=a1;
+    input15.value=a1;
+  a2=a1;
+  a3=a1;
+        input11.disabled=true;  
+  input15.disabled=true;  
+input11.style.borderColor="green"  ;
+  input15.style.borderColor="green"  ; 
+  }
+       else{
+         input11.value="";
+       }
+       
+if(a2=="a" || a2=="A"){    
+       f7.innerHTML=a2;
+  s5.innerHTML=a2;
+  input11.value=a2;
+  input24.value=a2;
+  a1=a2;
+  a3=a2;
+    input11.disabled=true;  
+  input15.disabled=true;  
+input11.style.borderColor="green"  ;
+  input15.style.borderColor="green"  ;
+  }
+       else{
+         input15.value="";
+       }
+       
+if(a3=="a" || a3=="A"){    
+       f7.innerHTML=a3;
+  s5.innerHTML=a3;
+  input15.value=a3;
+  a1=a3;
+  input11.value=a3;
+  a2=a3;
+    input11.disabled=true;  
+    input24.disabled=true;  
+  input15.disabled=true;  
+input11.style.borderColor="green"  ;
+  input15.style.borderColor="green"  ;
+  input24.style.borderColor="green"  ;
+  }
+       else{
+         input24.value="";
+       }
+       
+       
+       if(t1=="t" || t1=="T"){    
+    f5.innerHTML=t1;
+         t2=t1;
+         input14.value=t1;
+    input13.disabled=true;
+input14.disabled=true;
+    input13.style.borderColor="green" ; 
+input14.style.borderColor="green" ;  ; 
+         
+  }
+       else{
+         input13.value="";
+       }
+       
+       if(t2=="t" || t2=="T"){    
+       f5.innerHTML=t2;
+         t1=t2;
+         input13.value=t2;
+    input13.disabled=true;
+input14.disabled=true;
+    input13.style.borderColor="green" ; 
+input14.style.borderColor="green" ; 
+  }
+       else{
+         input14.value="";
+       }
+       
+       if(b1=="b" || b1=="B"){    
+       t12.innerHTML=b1;
+    input16.disabled=true;   
+input16.style.borderColor="green"  ; 
+  }
+       else{
+         input16.value="";
+       }
+       
+if(o1=="o" || o1=="O"){    
+    f9.innerHTML=o1;
+   f9a.innerHTML=o1;
+  t9.innerHTML=o1;
+         o2=o1;
+         input18.value=o1;
+    input17.disabled=true;
+input18.disabled=true;
+    input17.style.borderColor="green" ; 
+input18.style.borderColor="green" ;  ; 
+         
+  }
+       else{
+         input17.value="";
+       }
+       
+if(o2=="o" || o2=="O"){    
+    f9.innerHTML=o2;
+   f9a.innerHTML=o2;
+  t9.innerHTML=o2;
+         o1=o2;
+         input17.value=o2;
+    input17.disabled=true;
+input18.disabled=true;
+    input17.style.borderColor="green" ; 
+input18.style.borderColor="green" ;  ; 
+         
+  }
+       else{
+         input18.value="";
+       }
+             
+       if(f1a=="f" || f1a=="F"){    
+       t4.innerHTML=f1a;
+         f10.innerHTML=f1a;
+    input19.disabled=true;   
+input19.style.borderColor="green"  ; 
+  }
+       else{
+         input19.value="";
+       }
+       
+              if(r1=="r" || r1=="R"){    
+               f11.innerHTML=r1;
+    input20.disabled=true;   
+input20.style.borderColor="green";
+                
+  }
+       else{
+         input20.value="";
+       }
+       
+                     if(n1=="n" || n1=="N"){    
+               f7a.innerHTML=n1;
+    input25.disabled=true;   
+input25.style.borderColor="green";
+                
+  }
+       else{
+         input25.value="";
+       }
+       
+                         if(d1=="d" || d1=="D"){    
+               t13.innerHTML=d1;
+    input26.disabled=true;   
+input26.style.borderColor="green";
+                
+  }
+       else{
+         input26.value="";
+       }
+              
+         let inputs = document.querySelectorAll('input[type="text"]');
+  let allFilled = true;
+  inputs.forEach(input => {
+    if (!input.value) {
+      allFilled = false;
+      return;
+    }
+  });
+  
+  if (allFilled) {
+    let butrep=document.querySelector('#check');
+    document.querySelector('#reset').style.display="none";
+    document.querySelector('#hint').style.display="none";
+      document.querySelector('#ending').style.display="block";
+       document.querySelector('#again').style.display="block";
+let boxrep=document.querySelector(".box");
+    boxrep.style.display='none';
+    check.style.display='none';
   }
 }
-</script>
+       
 
-</body>
+</script>
 </html>
+
+
+
+ 
