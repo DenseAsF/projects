@@ -193,7 +193,7 @@
 }
 
 #again{
-  top:800px;
+  top:940px;
   position:absolute;
   left:350px;
   font-size:50px;
@@ -423,37 +423,73 @@
     <button id="reset" onclick="resett()">RESET</button>
     <button id="hint" onclick="hinthint()">HINT</button>
 
-  <h1 id=ending style='color:green; font-size:100; position: absolute; top:600px; left:350px; display:none;'>Game Finished</h1>
+  <div class=ending style='color:green;position: absolute; top:600px; left:240px; display:none;'>
+    <h1 style='color:green; font-size:50px'>GAME FINISHED</h1>
+    <h1> </h1>
+      <h1 style='color:green; font-size:20px'>WORDS:</h1>
+    <h1 style='color:black; font-size:10px'>SHELL</h1>
+    <h1 style='color:black; font-size:10px'>USE</h1>
+    <h1 style='color:black; font-size:10px'>YEAST</h1>
+    <h1 style='color:black; font-size:10px'>TABOO</h1>
+    <h1 style='color:black; font-size:10px'>FREEHAND</h1>
+    
+    
+    
+    
+  </div>
+  
   <button id=again onclick="againagain()">RESTART</button>
 </body>
 
+
+
 <script> 
 
-function hinthint(){
-  let randomNumber = Math.floor(Math.random() * 3) + 1;
-  
-  if(randomNumber===1){
-  let input12=document.querySelector("#s3");
-  input12.value='S'
-  upA2();
- 
-  }
-  if(randomNumber===2){
-  let input14=document.querySelector("#t2");
-  input14.value='T'
-  upA2();
-  
-}
-  
-  if(randomNumber===3){
- let input9=document.querySelector("#y1");
-  input9.value='Y'
-  upA2();
- 
-}
-  
-  document.querySelector('#hint').disabled=true;
+//setInterval(upA2,1);
 
+function hinthint(){
+  let check=false;
+  let randomNumber = Math.floor(Math.random() * 3) + 1;
+  let input12=document.querySelector("#s3");
+   let input14=document.querySelector("#t2");
+  let input9=document.querySelector("#y1");
+  
+  if(input12.value && input14.value && !input9.value){
+    randomNumber=3;  
+  }
+  else if(input12.value && input9.value && !input14.value){
+    randomNumber=2;  
+  }
+    else if(!input12.value && input9.value && input14.value){
+    randomNumber=1;  
+  }
+  
+  if(randomNumber===1 && !input12.value){
+  
+  input12.value='S';
+    check=true;
+  upA2();
+  }
+  
+  if(randomNumber===2 && !input14.value){
+ 
+  input14.value='T'; 
+    check=true;
+  upA2();
+  
+}
+  
+  if(randomNumber===3 && !input9.value){
+ 
+  input9.value='Y';
+    check=true;
+  upA2();
+ 
+}
+  if(check){
+  document.querySelector('#hint').disabled=true;
+  }
+  
 }
 
 
@@ -461,7 +497,7 @@ function againagain(){
   resett();
     document.querySelector('#check').style.display='block';
     document.querySelector('#reset').style.display='block';
-    document.querySelector('#ending').style.display="none";
+    document.querySelector('.ending').style.display="none";
     document.querySelector('#again').style.display="none";
     document.querySelector(".box").style.display='block';   
   document.querySelector('#hint').style.display="block";
@@ -509,7 +545,7 @@ function resett(){
 
 }
 
-//setInterval(upA2,1);
+
 
 function pressed(){
   upA2();
@@ -972,7 +1008,7 @@ input26.style.borderColor="green";
     let butrep=document.querySelector('#check');
     document.querySelector('#reset').style.display="none";
     document.querySelector('#hint').style.display="none";
-      document.querySelector('#ending').style.display="block";
+      document.querySelector('.ending').style.display="block";
        document.querySelector('#again').style.display="block";
 let boxrep=document.querySelector(".box");
     boxrep.style.display='none';
