@@ -197,6 +197,8 @@
       <h1 onclick="create()" style="margin-bottom:100px;">Next</h1>
       <h1 onclick="back()"style="font-size:20px;">Back</h1>
        <h1 id="empty" style="display:none; color:red;">SOME FIELDS ARE EMPTY</h1>      
+       <h1 id="warning" style="display:none; color:red;">USER NOT AVAILABLE</h1>      
+
      </div>
     
      <div class="createscreen2">
@@ -220,7 +222,7 @@
      <h1 style="margin-bottom:100px;"id="depositMain"></h1>
      <h1 onclick="addbalance()" style="margin-bottom:50px; border:2px solid white; width:170px;">Deposit</h1>
      <h1 onclick="subbalance()" style="margin-bottom:50px; border:2px solid white; width:190px;">Withdraw</h1>
-<h1 onclick="changepass()" style="margin-bottom:100px; border:2px solid white; width:370px;">Change Password</h1>
+<h1 onclick="changepass()" style="margin-bottom:50px; border:2px solid white; width:370px;">Change Password</h1>
            <h1 style="font-size:20px;"id='history'></h1>
      <h1 onclick="back()"style="font-size:30px; 
        position:relative; left:320px;">Log out</h1> 
@@ -279,6 +281,7 @@
 let account=0;
 let access=0;
 let empty=document.querySelector("#empty");
+let empty3=document.querySelector("#warning");
 let empty2=document.querySelector("#empty2");
 let invalid = document.querySelector("#invalid");
 let invalid2 = document.querySelector("#invalid2");
@@ -366,8 +369,14 @@ function back2(){
     screen6.style.display="none";
   screen7.style.display="none";
   screen4.style.display="block";
+    invalid2.style.display="none";
+    invalid.style.display="none";
+    querySelector("#changepass").value="";
+
 }
+
 function create(){
+  
   let userCreate = document.querySelector("#userCreate").value; 
   let pinCreate = document.querySelector("#pinCreate").value;   
 
@@ -375,6 +384,15 @@ function create(){
     empty.style.display="block";
     return;
   }  
+  
+  for(let i=0;i<account+1;i++){
+    if(userCreate==user[i]){
+      empty3.style.display="block";
+      
+return;      
+    }
+  }
+    empty3.style.display="none";
   empty.style.display="none";
   screen.style.display="none";  
   screen3.style.display="block";
@@ -437,7 +455,7 @@ function changeexecute(){
  pin[access-1]=pass;
   screen4.style.display="block";
   screen5.style.display="none";
-  querySelector("#changepass").value="";
+  document.querySelector("#changepass").value="";
 }
 
 function addbalance(){
