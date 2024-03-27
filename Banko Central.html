@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alkansya</title>
+  <style>
+    body {
+      background-color: black;
+    }
+    
+    .atm {
+      height: 1500px;
+      width: 950px;
+      background-color: lightgrey;
+      border: 5px solid black;
+    }
+    
+    .screen{
+      background-color: blue;
+      height: 1050px;
+      width: 850px;
+      position: relative;
+      left: 50px;
+      border-radius: 20px;
+      border: 5px solid black;
+      top: 200px;
+      text-align: center;
+      color: white;
+     
+    }
+    
+    .screen input {
+      background-color: blue;
+      font-size: 20px;
+      color: white;
+      border: 2px solid white;
+      
+    }
+  
+  
+    .createscreen {
+      background-color: blue;
+      height: 1050px;
+      width: 850px;
+      position: relative;
+      left: 50px;
+      border-radius: 20px;
+      border: 5px solid black;
+      top: 200px;
+      text-align: center;
+      color: white;
+      display:none;
+    }
+    
+    .createscreen input {
+      background-color: blue;
+      font-size: 20px;
+      color: white;
+      border: 2px solid white;
+    }
+  
+      .createscreen2 {
+      background-color: blue;
+      height: 1050px;
+      width: 850px;
+      position: relative;
+      left: 50px;
+      border-radius: 20px;
+      border: 5px solid black;
+      top: 200px;
+      text-align: center;
+      color: white;
+      display:none;
+    }
+    
+    .createscreen2 input {
+      background-color: blue;
+      font-size: 20px;
+      color: white;
+      border: 2px solid white;
+    }
+  
+  
+    #sign {
+      position: absolute;
+      top: 70px;
+      border-radius: 10px;
+      left: 250px;
+      width: 500px;
+      font-size: 50px;
+      background-color: grey;
+      text-align: center;
+      font-weight: bold;
+    }
+  
+  
+   .main {
+      background-color: blue;
+      height: 1050px;
+      width: 850px;
+      position: relative;
+      left: 50px;
+      border-radius: 20px;
+      border: 5px solid black;
+      top: 200px;
+      color: white;
+      display:none;
+    }
+  .main h1{
+    margin-left:50px;
+  }
+  
+  .pass{
+      background-color: blue;
+      height: 1050px;
+      width: 850px;
+      position: relative;
+      left: 50px;
+      border-radius: 20px;
+      border: 5px solid black;
+      top: 200px;
+      color: white;
+      display:none;
+    text-align:center;
+    }
+  .pass input {
+      background-color: blue;
+      font-size: 20px;
+      color: white;
+      border: 2px solid white;
+    }
+  
+  .deposit{
+      background-color: blue;
+      height: 1050px;
+      width: 850px;
+      position: relative;
+      left: 50px;
+      border-radius: 20px;
+      border: 5px solid black;
+      top: 200px;
+      color: white;
+      display:none;
+    text-align:center;
+    }
+  .deposit input {
+      background-color: blue;
+      font-size: 20px;
+      color: white;
+      border: 2px solid white;
+    }
+   .withdraw{
+      background-color: blue;
+      height: 1050px;
+      width: 850px;
+      position: relative;
+      left: 50px;
+      border-radius: 20px;
+      border: 5px solid black;
+      top: 200px;
+      color: white;
+      display:none;
+    text-align:center;
+    }
+  .withdraw  input {
+      background-color: blue;
+      font-size: 20px;
+      color: white;
+      border: 2px solid white;
+    }
+  
+    
+  </style>
+</head>
+<body>
+  <div id="sign">ATM</div>
+   
+  <div class="atm">
+    
+    <div class="screen">
+      <h1 style="margin-top:100px; margin-bottom: 200px;">WELCOME TO ALKANSYA</h1>    
+      <h1>User: </h1>      
+      <input id="userlog" type="text" style="margin-bottom: 50px;">
+      <h1>Password: </h1>
+      <input id="pinlog" type="text" style="margin-bottom: 50px;">
+      <h1 onclick="login()" style="margin-bottom:100px;">Log in</h1>
+      <h1 onclick="Cscreen()"style="font-size:20px;">Create Account</h1>
+       <h1 id="alarm" style="display:none; color:red;">ACCOUNT NOT FOUND</h1>      
+
+    </div>
+    
+     <div class="createscreen">
+      <h1 style="margin-top:100px; margin-bottom: 200px;">CREATE AN ACCOUNT</h1>   
+     <h1>Create User: </h1>      
+      <input id="userCreate" type="text" style="margin-bottom: 50px;">
+      <h1>Create Pin: </h1>
+      <input id="pinCreate" type="text" style="margin-bottom: 50px;">
+      <h1 onclick="create()" style="margin-bottom:100px;">Next</h1>
+      <h1 onclick="back()"style="font-size:20px;">Back</h1>
+       <h1 id="empty" style="display:none; color:red;">SOME FIELDS ARE EMPTY</h1>      
+     </div>
+    
+     <div class="createscreen2">
+      <h1 style="margin-top:100px; margin-bottom: 200px;">CREATE AN ACCOUNT</h1>   
+     <h1>Create ID: </h1>      
+      <input id="idCreate" type="text" style="margin-bottom: 50px;">
+      <h1>Deposit: </h1>
+      <input id="depositCreate" type="text" style="margin-bottom: 50px;">
+      <h1 onclick="create2()" style="margin-bottom:100px;">Done</h1>
+      <h1 onclick="back()"style="font-size:20px;">Back</h1>
+        <h1 id="empty2" style="display:none; color:red;">SOME FIELDS ARE EMPTY</h1>      
+
+       <h1 id="Dep" style="display:none; color:red;">INVALID DEPOSIT</h1>      
+     </div>  
+    
+       <div class="main">
+     <h1 id="accMain" style="position:relative; 
+       margin-top:100px; margin-bottom: 100px; left:270px;"></h1>  
+     <h1 style="margin-bottom:50px;"id="idMain"></h1>
+     <h1 style="margin-bottom:20px;"id="userMain"></h1>
+     <h1 style="margin-bottom:100px;"id="depositMain"></h1>
+     <h1 onclick="addbalance()" style="margin-bottom:50px; border:2px solid white; width:170px;">Deposit</h1>
+     <h1 onclick="subbalance()" style="margin-bottom:50px; border:2px solid white; width:190px;">Withdraw</h1>
+<h1 onclick="changepass()" style="margin-bottom:100px; border:2px solid white; width:370px;">Change Password</h1>
+           <h1 style="font-size:20px;"id='history'></h1>
+     <h1 onclick="back()"style="font-size:30px; 
+       position:relative; left:320px;">Log out</h1> 
+       
+      </div>  
+    
+    <div class="pass">
+         <h1 style="position:relative; 
+       margin-top:100px; margin-bottom: 100px;">Change Your Password</h1>  
+      <h1>Enter Your New Password: </h1>
+          <input id="changepass" type="text" >
+         <h1 onclick="changeexecute()"style="font-size:50px; 
+       position:relative;">Done</h1> 
+     
+              <h1 onclick="back()"style="font-size:30px; 
+       position:relative;">Back</h1> 
+      </div>  
+    
+    <div class="deposit">
+         <h1 style="position:relative; 
+       margin-top:100px; margin-bottom: 100px;">DEPOSIT</h1>  
+       <h1 style="margin-bottom:50px;"id="amount2"></h1>
+
+      <h1>Enter Desired Amount: </h1>
+          <input id="added" type="text" style="margin-bottom: 50px; font-size:20px;">
+         <h1 onclick="add()"style="font-size:50px; 
+       position:relative;">Done</h1> 
+     
+              <h1 onclick="back()"style="font-size:30px; 
+       position:relative;">Back</h1> 
+      <h1 id="invalid" style="display:none; color:red;">INVALID INPUT</h1>      
+      </div>  
+    
+       <div class="withdraw">
+         <h1 style="position:relative; 
+             margin-top:100px; margin-bottom: 100px;">WITHDRAW</h1>  
+           <h1 style="margin-bottom:50px;"id="amount1"></h1>
+
+      <h1>Enter Desired Amount: </h1>
+          <input id="subtracted" type="text" style="margin-bottom: 50px; font-size:20px;">
+         <h1 onclick="sub()"style="font-size:50px; 
+       position:relative;">Done</h1> 
+     
+              <h1 onclick="back()"style="font-size:30px; 
+       position:relative;">Back</h1> 
+      <h1 id="invalid2" style="display:none; color:red;">INVALID INPUT</h1>      
+
+      </div>  
+    
+    
+    
+</body>
+</html>
+
+<script>
+let account=0;
+let access=0;
+let empty=document.querySelector("#empty");
+let empty2=document.querySelector("#empty2");
+let invalid = document.querySelector("#invalid");
+let invalid2 = document.querySelector("#invalid2");
+let history=document.querySelector("#history");
+
+let screen=document.querySelector(".createscreen");
+let screen2=document.querySelector(".screen");
+let screen3=document.querySelector(".createscreen2");
+let screen4=document.querySelector(".main");
+let screen5=document.querySelector(".pass");
+let screen6=document.querySelector(".deposit");
+let screen7=document.querySelector(".withdraw");
+
+let user=[];
+let pin=[];
+let id=[];
+let deposit=[];
+
+function mainmenu(){
+  let alarm=document.querySelector("#alarm");
+  let toptext=document.querySelector("#accMain");
+  let usertext=document.querySelector("#userMain");
+   let idtext=document.querySelector("#idMain");
+  let deposittext=document.querySelector("#depositMain");
+
+  screen2.style.display="none";
+  screen.style.display="none";  
+  screen3.style.display="none";
+  screen4.style.display="block";
+  toptext.textContent="ACCOUNT "+ access;
+  usertext.textContent="User: "+ user[access-1];
+  idtext.textContent="ID: "+ id[access-1];
+  deposittext.textContent="Balance: ₱"+ deposit[access-1];
+}
+
+function login(){
+  let check=false;
+  let userlog=document.querySelector("#userlog").value;
+  let pinlog=document.querySelector("#pinlog").value;
+  
+
+  for(let i=0;i<=account;i++){
+    if(userlog==user[i] && pinlog==pin[i]){
+      access=i+1;
+      check=true;   
+    }    
+  }
+  if(!check){
+    alarm.style.display="block";
+    return;
+  }
+  alarm.style.display="none";
+  mainmenu(); 
+}
+
+
+
+
+function Cscreen(){
+  screen.style.display="block";
+  screen2.style.display="none";  
+}
+
+function back(){  
+  screen2.style.display="block";
+  screen.style.display="none";  
+  screen3.style.display="none";
+  screen4.style.display="none";
+  screen5.style.display="none";
+  screen6.style.display="none";
+  screen7.style.display="none";
+   alarm.style.display="none";
+  document.querySelector("#userlog").value="";
+  document.querySelector("#pinlog").value="";
+  document.querySelector("#userCreate").value="";
+  document.querySelector("#pinCreate").value='';
+  document.querySelector("#idCreate").value='';
+  document.querySelector("#depositCreate").value='';
+empty2.style.display="none";
+  empty.style.display="none";
+  
+}
+
+function create(){
+  let userCreate = document.querySelector("#userCreate").value; 
+  let pinCreate = document.querySelector("#pinCreate").value;   
+
+  if(!userCreate || !pinCreate){ 
+    empty.style.display="block";
+    return;
+  }  
+  empty.style.display="none";
+  screen.style.display="none";  
+  screen3.style.display="block";
+  empty.style.display="none";
+}
+
+function create2(){
+  
+  
+  let userCreate = document.querySelector("#userCreate").value; 
+  let pinCreate = document.querySelector("#pinCreate").value;   
+  let idcreate = document.querySelector("#idCreate").value; 
+  let depositcreate = document.querySelector("#depositCreate").value;
+  let dep = document.querySelector("#Dep");
+  
+  document.querySelector("#userlog").value="";
+  document.querySelector("#pinlog").value="";
+  
+  if(!idcreate || !depositcreate){ 
+    empty2.style.display="block";
+    return;
+  } 
+  
+  if(isNaN(depositcreate) || depositcreate<0){
+    document.querySelector("#depositCreate").value="";
+    depositcreate="";
+    dep.style.display="block";
+    return;
+  }
+  
+  let amount=parseInt(depositcreate);
+  deposit.push(amount); 
+  id.push(idcreate);
+  user.push(userCreate); 
+  pin.push(pinCreate);
+  screen2.style.display="block";  
+  screen3.style.display="none";
+  depositcreate="";
+  idcreate="";
+  userCreate="";
+  pinCreate="";
+  document.querySelector("#userCreate").value="";
+  document.querySelector("#pinCreate").value="";
+  document.querySelector("#idCreate").value="";
+  document.querySelector("#depositCreate").value="";
+  account++;
+  alarm.style.display="none";
+  empty2.style.display="none";
+}
+
+function changepass(){
+  screen2.style.display="none";
+  screen.style.display="none";  
+  screen3.style.display="none";
+  screen4.style.display="none";
+  screen5.style.display="block";
+}
+function changeexecute(){
+  let pass=document.querySelector("#changepass").value;
+ pin[access-1]=pass;
+  screen4.style.display="block";
+  screen5.style.display="none";
+  querySelector("#changepass").value="";
+}
+
+function addbalance(){
+    let depositDisplay = document.querySelector("#depositMain");
+  document.querySelector("#added").value = ""; 
+  let amount= document.querySelector("#amount2");
+amount.textContent="₱"+deposit[access-1];
+
+  screen2.style.display="none";
+  screen.style.display="none";  
+  screen3.style.display="none";
+  screen4.style.display="none";
+  screen5.style.display="none";
+  screen6.style.display="block";
+  screen7.style.display="none";
+}
+function add(){
+  let depositDisplay = document.querySelector("#depositMain");
+  let data = parseFloat(document.querySelector("#added").value);
+  if(isNaN(data) || data<0 ) {
+    invalid.style.display="block";
+    return;
+  }
+  deposit[access-1] += data;
+  depositDisplay.textContent = "Balance: ₱" + deposit[access-1];
+  screen4.style.display = "block";
+  screen6.style.display = "none";
+    invalid.style.display="none";
+    history.textContent="Recebtly Deposited: ₱"+data;
+  }
+
+
+function subbalance(){
+  let amount= document.querySelector("#amount1");
+amount.textContent="₱"+deposit[access-1];
+    document.querySelector("#subtracted").value = "";     
+  screen2.style.display="none";
+  screen.style.display="none";  
+  screen3.style.display="none";
+  screen4.style.display="none";
+  screen5.style.display="none";
+  screen6.style.display="none";
+  screen7.style.display="block";
+}
+function sub(){
+  let depositDisplay = document.querySelector("#depositMain");
+  let data = parseFloat(document.querySelector("#subtracted").value);
+  if(isNaN(data) || data<0 || data>deposit[access-1] ) {
+    invalid2.style.display="block";
+    return;
+  }
+  deposit[access-1] -= data;
+  depositDisplay.textContent = "Balance: ₱" + deposit[access-1];
+  screen4.style.display = "block";
+  screen7.style.display = "none";
+    invalid2.style.display="none";
+    history.textContent="Recently Withdrawed: ₱"+data;
+}
+
+
+
+</script>
