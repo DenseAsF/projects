@@ -181,7 +181,7 @@
       <h1>User: </h1>      
       <input id="userlog" type="text" style="margin-bottom: 50px;">
       <h1>Password: </h1>
-      <input id="pinlog" type="text" style="margin-bottom: 50px;">
+      <input id="pinlog" type="password" style="margin-bottom: 50px;">
       <h1 onclick="login()" style="margin-bottom:100px;">Log in</h1>
       <h1 onclick="Cscreen()"style="font-size:20px;">Create Account</h1>
        <h1 id="alarm" style="display:none; color:red;">ACCOUNT NOT FOUND</h1>      
@@ -249,7 +249,7 @@
          <h1 onclick="add()"style="font-size:50px; 
        position:relative;">Done</h1> 
      
-              <h1 onclick="back()"style="font-size:30px; 
+              <h1 onclick="back2()"style="font-size:30px; 
        position:relative;">Back</h1> 
       <h1 id="invalid" style="display:none; color:red;">INVALID INPUT</h1>      
       </div>  
@@ -264,7 +264,7 @@
          <h1 onclick="sub()"style="font-size:50px; 
        position:relative;">Done</h1> 
      
-              <h1 onclick="back()"style="font-size:30px; 
+              <h1 onclick="back2()"style="font-size:30px; 
        position:relative;">Back</h1> 
       <h1 id="invalid2" style="display:none; color:red;">INVALID INPUT</h1>      
 
@@ -358,10 +358,15 @@ function back(){
   document.querySelector("#idCreate").value='';
   document.querySelector("#depositCreate").value='';
 empty2.style.display="none";
-  empty.style.display="none";
-  
+  empty.style.display="none";  
 }
 
+
+function back2(){
+    screen6.style.display="none";
+  screen7.style.display="none";
+  screen4.style.display="block";
+}
 function create(){
   let userCreate = document.querySelector("#userCreate").value; 
   let pinCreate = document.querySelector("#pinCreate").value;   
@@ -461,7 +466,7 @@ function add(){
   screen4.style.display = "block";
   screen6.style.display = "none";
     invalid.style.display="none";
-    history.textContent="Recebtly Deposited: ₱"+data;
+    history.textContent="Recently Deposited: ₱"+data;
   }
 
 
