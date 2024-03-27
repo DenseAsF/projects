@@ -93,7 +93,7 @@
     }
   
   
-   .main {
+   .main{
       background-color: blue;
       height: 1050px;
       width: 850px;
@@ -105,6 +105,7 @@
       color: white;
       display:none;
     }
+  
   .main h1{
     margin-left:50px;
   }
@@ -181,7 +182,7 @@
       <h1>User: </h1>      
       <input id="userlog" type="text" style="margin-bottom: 50px;">
       <h1>Password: </h1>
-      <input id="pinlog" type="password" style="margin-bottom: 50px;">
+      <input id="pinlog" type="text" style="margin-bottom: 50px;">
       <h1 onclick="login()" style="margin-bottom:100px;">Log in</h1>
       <h1 onclick="Cscreen()"style="font-size:20px;">Create Account</h1>
        <h1 id="alarm" style="display:none; color:red;">ACCOUNT NOT FOUND</h1>      
@@ -193,7 +194,7 @@
      <h1>Create User: </h1>      
       <input id="userCreate" type="text" style="margin-bottom: 50px;">
       <h1>Create Pin: </h1>
-      <input id="pinCreate" type="text" style="margin-bottom: 50px;">
+      <input id="pinCreate" type="text" maxlength="6" style="margin-bottom: 50px;">
       <h1 onclick="create()" style="margin-bottom:100px;">Next</h1>
       <h1 onclick="back()"style="font-size:20px;">Back</h1>
        <h1 id="empty" style="display:none; color:red;">SOME FIELDS ARE EMPTY</h1>      
@@ -210,23 +211,20 @@
       <h1 onclick="create2()" style="margin-bottom:100px;">Done</h1>
       <h1 onclick="back()"style="font-size:20px;">Back</h1>
         <h1 id="empty2" style="display:none; color:red;">SOME FIELDS ARE EMPTY</h1>      
-
-       <h1 id="Dep" style="display:none; color:red;">INVALID DEPOSIT</h1>      
+       <h1 id="Dep" style="display:none; color:red;">INVALID DEPOSIT</h1>    
+              <h1 id="warning2" style="display:none; color:red;">ID NOT AVAILABLE</h1>      
      </div>  
     
        <div class="main">
-     <h1 id="accMain" style="position:relative; 
-       margin-top:100px; margin-bottom: 100px; left:270px;"></h1>  
+     <h1 id="accMain" style="margin-top:100px; margin-bottom:100px;"></h1>  
      <h1 style="margin-bottom:50px;"id="idMain"></h1>
      <h1 style="margin-bottom:20px;"id="userMain"></h1>
      <h1 style="margin-bottom:100px;"id="depositMain"></h1>
      <h1 onclick="addbalance()" style="margin-bottom:50px; border:2px solid white; width:170px;">Deposit</h1>
      <h1 onclick="subbalance()" style="margin-bottom:50px; border:2px solid white; width:190px;">Withdraw</h1>
-<h1 onclick="changepass()" style="margin-bottom:50px; border:2px solid white; width:370px;">Change Password</h1>
+     <h1 onclick="changepass()" style="margin-bottom:50px; border:2px solid white; width:370px;">Change Password</h1>
            <h1 style="font-size:20px;"id='history'></h1>
-     <h1 onclick="back()"style="font-size:30px; 
-       position:relative; left:320px;">Log out</h1> 
-       
+     <h1 onclick="back()"style="font-size:30px;">Log out</h1> 
       </div>  
     
     <div class="pass">
@@ -237,7 +235,7 @@
          <h1 onclick="changeexecute()"style="font-size:50px; 
        position:relative;">Done</h1> 
      
-              <h1 onclick="back()"style="font-size:30px; 
+              <h1 onclick="back2()"style="font-size:30px; 
        position:relative;">Back</h1> 
       </div>  
     
@@ -282,6 +280,7 @@ let account=0;
 let access=0;
 let empty=document.querySelector("#empty");
 let empty3=document.querySelector("#warning");
+let empty4=document.querySelector("#warning2");
 let empty2=document.querySelector("#empty2");
 let invalid = document.querySelector("#invalid");
 let invalid2 = document.querySelector("#invalid2");
@@ -346,6 +345,7 @@ function Cscreen(){
 }
 
 function back(){  
+  let depositDisplay = document.querySelector("#history");
   screen2.style.display="block";
   screen.style.display="none";  
   screen3.style.display="none";
@@ -362,6 +362,10 @@ function back(){
   document.querySelector("#depositCreate").value='';
 empty2.style.display="none";
   empty.style.display="none";  
+  depositDisplay.textContent = "";
+  document.querySelector("#Dep").style.display="none";
+  
+
 }
 
 
@@ -413,16 +417,28 @@ function create2(){
   
   if(!idcreate || !depositcreate){ 
     empty2.style.display="block";
+    dep.style.display="none";
     return;
   } 
-  
+      
   if(isNaN(depositcreate) || depositcreate<0){
     document.querySelector("#depositCreate").value="";
     depositcreate="";
     dep.style.display="block";
+    empty2.style.display="none";  
     return;
   }
   
+    for(let i=0;i<account+1;i++){
+    if(idcreate==user[i]){
+   empty4.style.display="block";  
+   empty2.style.display="none";  
+   alarm.style.display="none";  
+   dep.style.display="none";
+return;      
+    }
+  }
+    
   let amount=parseInt(depositcreate);
   deposit.push(amount); 
   id.push(idcreate);
@@ -441,6 +457,7 @@ function create2(){
   account++;
   alarm.style.display="none";
   empty2.style.display="none";
+  dep.style.display="none";
 }
 
 function changepass(){
