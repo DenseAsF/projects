@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<body>
+
+
+<style>
+    .circle {
+        display: inline-block;
+      align-items:center;
+        height: 400px;
+        width: 1500px;
+        background-color: black;
+        text-align: center; 
+    }
+
+.button{
+text-align:center;
+}
+
+#start {
+height:100px;
+text-align:center;
+width:200px;
+border:none;
+border-radius:20px;
+background-color:black;
+margin-top:20px;
+color:white;
+font-size:30px;
+
+
+}
+
+#start:hover {
+height:100px;
+width:200px;
+
+border:2px solid black;
+background-color:white;
+margin-top:20px;
+color:black;
+
+}
+
+
+#reset {
+height:100px;
+text-align:center;
+width:200px;
+border:none;
+border-radius:20px;
+background-color:black;
+margin-top:20px;
+color:white;
+font-size:30px;
+
+
+}
+
+#reset:hover {
+height:100px;
+width:200px;
+
+border:2px solid black;
+background-color:white;
+margin-top:20px;
+color:black;
+
+}
+
+#stop {
+text-align:center;
+height:100px;
+width:200px;
+border:none;
+border-radius:20px;
+background-color:black;
+margin-top:20px;
+color:white;
+font-size:30px;
+
+}
+
+#stop:hover {
+height:100px;
+width:200px;
+border:2px solid black;
+background-color:white;
+margin-top:20px;
+color:black;
+
+}
+
+    #day,
+    #sep1,
+    #hour,
+    #sep2,
+    #minute,
+    #sep3,
+    #second {
+        color: white;
+        font-size: 100px;
+        display: inline-block;
+font-family:arial;	
+      margin-top:120px;
+    }
+
+    #subday,
+  
+    #subhour,
+   
+    #subminute,
+  
+    #subsecond {
+        color: white;
+        font-size: 100px;
+        display: inline-block;
+font-family:arial;	
+      margin-top:120;
+    }
+  
+  
+#dy,
+    #hr,
+    #mn,
+    #sc {
+        color: white;
+        font-size: 30px;
+        display: inline-block;
+font-family:arial;	
+    }
+
+</style>
+
+
+<div class="circle">
+  
+   <div id="subday">0</div>
+    <div id="day">0</div>
+<div id="dy">Day</div>
+
+   <div id="sep1">:</div>
+   <div id="subhour">0</div>
+    <div id="hour">0</div>
+<div id="hr">Hour</div>
+    <div id="sep2">:</div>
+ <div id="subminute">0</div>
+    <div id="minute">0</div>
+<div id="mn">Min</div>
+    <div id="sep3">:</div>
+   <div id="subsecond">0</div>
+    <div id="second">0</div>
+<div id="sc">Sec</div>
+</div>
+	
+<div class="button">
+<button id="start" onclick="secondTime()">
+ Start
+</button>
+<button id="stop">
+ Stop
+</button>
+<button id="reset">
+ Reset
+</button>
+</div>
+
+</body>
+
+<script>
+let check=false;
+let secval=0;
+let minuteval=0;
+let hourval=0;
+let dayval=0;
+let day=document.querySelector("#day");
+let hour=document.querySelector("#hour");
+let minute=document.querySelector("#minute");
+let second=document.querySelector("#second");
+
+
+let subsec=document.getElementById("subsecond");
+let submin=document.getElementById("subminute");
+let subhr=document.getElementById("subhour");
+let subdy=document.getElementById("subday");
+
+function secondTime(){
+secval++;
+
+second.textContent=secval;
+minute.textContent=minuteval;
+hour.textContent=hourval;
+day.textContent=dayval;
+
+  if (secval <= 9) {
+ subsec.textContent="0";
+} else {
+    subsec.textContent = "";
+}
+    if (minuteval <= 9) {
+ submin.textContent="0";
+} else {
+    submin.textContent = "";
+}
+if (hourval <= 9) {
+ subhr.textContent="0";
+} else {
+    subhr.textContent = "";
+}
+  if (dayval <= 9) {
+ subdy.textContent="0";
+} else {
+    subdy.textContent = "";
+}
+  
+if(secval==60){
+  
+secval=0;
+minuteval++;
+}
+
+if(minuteval==60){
+secval=0;
+minuteval=0;
+hourval++;
+}
+
+if(hourval==24){
+secval=0;
+minuteval=0;
+hourval=0;
+dayval++;
+}
+  
+ 
+    
+}
+
+
+
+
+document.querySelector("#start").addEventListener("click", function () {
+    secondInterval = setInterval(secondTime, 1000);
+document.querySelector("#start").disabled = true;
+  });
+
+
+
+  document.querySelector("#stop").addEventListener("click", function () {
+    clearInterval(secondInterval);
+document.querySelector("#start").disabled = false;
+  });
+
+document.querySelector("#reset").addEventListener("click",function (){
+ clearInterval(secondInterval);
+document.querySelector("#start").disabled = false;
+secval=0;
+minuteval=0;
+hourval=0;
+dayval=0;
+second.textContent=secval;
+minute.textContent=minuteval;
+hour.textContent=hourval;
+day.textContent=dayval;
+  
+   submin.textContent="0";
+   subsec.textContent="0";
+   subdy.textContent="0";
+ subhr.textContent="0";
+  
+});
+
+
+</script>
+
+
+</html>
