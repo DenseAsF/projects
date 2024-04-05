@@ -543,6 +543,10 @@ return;
 }
 
 function create2(){
+  
+  document.querySelector("#userlog").value = "";
+document.querySelector("#pinlog").value = "";
+  
   let userCreate = document.querySelector("#userCreate").value; 
   let pinCreate = document.querySelector("#pinCreate").value;   
   let idcreate = document.querySelector("#idCreate").value; 
@@ -607,6 +611,7 @@ function create2(){
   document.querySelector('#balCheck').style.display="block";
   document.querySelector('#enable').style.display="block";
   document.querySelector('#disable').style.display="block";
+
  
 }
 
@@ -724,6 +729,9 @@ document.querySelector('.table').innerHTML += ` <h1 onclick="back2()" style="fon
 
 function enable(){
   enabled=true;
+  for(let i=0;i<account;i++){
+    entry[i]=accept;
+  }
 }
 function disable(){
   enabled=false;
