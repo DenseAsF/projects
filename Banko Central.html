@@ -93,7 +93,7 @@
     }
   
      #otin{
-    margin-left:50px;
+    margin-left:20px;
     background-color: hsl(230, 100%, 70%);
     font-weight:bold;
     color:white;
@@ -101,11 +101,10 @@
     font-size:30px;
     border:3px solid black;
     margin-bottom:30px;
-    display:block;
   }
   
   #otin2{
-    margin-left:50px;
+    margin-left:20px;
     background-color: hsl(230, 100%, 70%);
     font-weight:bold;
     color:white;
@@ -113,7 +112,6 @@
     font-size:30px;
     border:3px solid black;
     margin-bottom:30px;
-    display:block;
   }
 
   
@@ -234,20 +232,26 @@
     }
   
   .table table{
-    border:2px solid black;
-    width:100%;
+    border:3px solid black;
+    width:90%;
     font-size:20px;
   border-collapse: collapse;
+    margin-top:20px;
+    margin-left:5%;
 }
 
 .table table, .table table td {
-  border: 1px solid black;
+  border: 3px solid black;
 }
 
 .table table th, .table table td {
   padding: 8px;
   text-align: left;
 }
+  
+  .adminpanel buttons{
+    display:inline-block;
+  }
     
   </style>
 </head>
@@ -259,7 +263,8 @@
       <h1>User: </h1>      
       <input id="userlog" type="text" style="margin-bottom: 50px;">
       <h1>Password: </h1>
-      <input id="pinlog" type="text" style="margin-bottom: 50px;">
+      <input id="pinlog" type="password" style="margin-bottom: 10px;">
+      <h1 onclick='showpass()' style="font-size:20px; margin-bottom:50px;">Show password</h1>
       <h1 onclick="login()" style="margin-bottom:100px;">Log in</h1>
       <h1 onclick="Cscreen()"style="font-size:20px;margin-bottom:40px;">Create Account</h1>
             <h1 onclick='adminpan()' style="font-size:20px; ">Manage Admin Account</h1>
@@ -370,6 +375,11 @@
 </html>
 
 <script>
+let fee1=1;
+let fee2=10;
+let fee3=20;
+let fee4=50;
+
 let created=false;
 let enabled=true;
 let account=0;
@@ -473,35 +483,6 @@ function Cscreen(){
   screen2.style.display="none";  
 }
 
-function back(){  
-  deny.style.display="none";
-  let depositDisplay = document.querySelector("#history");
-  screen2.style.display="block";
-  screen.style.display="none";  
-  screen3.style.display="none";
-  screen4.style.display="none";
-  screen5.style.display="none";
-  screen6.style.display="none";
-  screen7.style.display="none";
-  screen8.style.display="none";
-  screen9.style.display="none";
-document.body.style.backgroundColor = "black";
-
-   alarm.style.display="none";
-  document.querySelector("#userlog").value="";
-  document.querySelector("#pinlog").value="";
-  document.querySelector("#userCreate").value="";
-  document.querySelector("#pinCreate").value='';
-  document.querySelector("#idCreate").value='';
-  document.querySelector("#depositCreate").value='';
-empty2.style.display="none";
-  empty.style.display="none";  
-  depositDisplay.textContent = "";
-  document.querySelector("#Dep").style.display="none";
-  
-
-}
-
 
 function back2(){
     screen6.style.display="none";
@@ -586,11 +567,17 @@ document.querySelector("#pinlog").value = "";
   entry.push(accept);
   
   let tableData = [
-    ["ACTIVITY", "AMOUNT", "CURRENT BALANCE"] 
+    ["ACTIVITY", "AMOUNT","FEE", "CURRENT BALANCE"] 
   ];
- 
+   
+ let row=["DEPOSIT",amount,0,amount];
+
   tables.push(tableData);
   
+ let t=tables[account];
+    
+    t.push(row);
+    
   screen2.style.display="block";  
   screen3.style.display="none";
   depositcreate="";
@@ -612,7 +599,7 @@ document.querySelector("#pinlog").value = "";
   document.querySelector('#enable').style.display="block";
   document.querySelector('#disable').style.display="block";
 
- 
+    
 }
 
 
@@ -653,14 +640,38 @@ function add(){
     invalid.style.display="block";
     return;
   }
-  deposit[access] += data;
+    
+    let tax=0;
+    let amount=data;
+    
+   if(data<=50 && data>=5){
+     amount-=fee1;
+     tax=fee1;
+   }
+     else if(data>=51 && data<=500){
+       amount-=fee2;
+       tax=fee2;
+     }
+    
+     else if(data>=501 && data<=1000){
+       amount-=fee3;
+       tax=fee3;
+     }
+       
+       else if(data>=1000){
+       amount-=fee4;
+       tax=fee4;
+     }
+    
+    
+  deposit[access] += amount;
   depositDisplay.textContent = "Balance: ₱" + deposit[access];
   screen4.style.display = "block";
   screen6.style.display = "none";
     invalid.style.display="none";
     history.textContent="Recently Deposited: ₱"+data;      
 
-        let row=["DEPOSIT",data,deposit[access]];
+        let row=["DEPOSIT",data,tax,deposit[access]];
     let table=tables[access];
     table.push(row);
   }
@@ -682,17 +693,19 @@ amount.textContent="₱"+deposit[access];
 function sub(){
   let depositDisplay = document.querySelector("#depositMain");
   let data = parseFloat(document.querySelector("#subtracted").value);
-  if(isNaN(data) || data<0 || data>deposit) {
+  
+  if(isNaN(data) || data<0 || data>deposit[access]) {
     invalid2.style.display="block";
     return;
   }
+    
   deposit[access] -= data;
   depositDisplay.textContent = "Balance: ₱" + deposit[access];
   screen4.style.display = "block";
   screen7.style.display = "none";
     invalid2.style.display="none";
     history.textContent="Recently Withdrawed: ₱"+data;
-    let row=["WITHDRAW",data,deposit[access]];
+    let row=["WITHDRAW",data,0,deposit[access]];
     let table=tables[access];
     table.push(row);
 }
@@ -732,17 +745,97 @@ function enable(){
   for(let i=0;i<account;i++){
     entry[i]=accept;
   }
+    adminpan();
 }
 function disable(){
   enabled=false;
+    for(let i=0;i<account;i++){
+    entry[i]=denied;
+  }
+      adminpan();
 }
-function adminpan(){
-  document.body.style.backgroundColor = "white";
 
+
+
+function adminpan() {
+  document.body.style.backgroundColor = "white";
+  deny.style.display = "none";
+  alarm.style.display = "none";
+  empty7.style.display = "none";
+  screen2.style.display = "none";
+  screen.style.display = "none";
+  screen3.style.display = "none";
+  screen4.style.display = "none";
+  screen5.style.display = "none";
+  screen6.style.display = "none";
+  screen7.style.display = "none";
+  screen8.style.display = "none";
+  screen9.style.display = "block";
+
+  screen9.style.display = "block";
+
+  let adminPanel = document.querySelector('.adminpanel');
+  adminPanel.innerHTML = '<h1 style="margin-top:100px; margin-bottom:100px;">ADMIN PANEL</h1>';
+if (created) {
+   adminPanel.innerHTML += ` <button id='otin' onclick='enable()'>ENABLE ACCOUNTS</button> `;
+  adminPanel.innerHTML += ` <button id='otin2' onclick='disable()'>DISABLE ACCOUNTS</button> `;
+}
+  for (let i = 0; i < account; i++) {
+    index = i;
+    let enableStatus = entry[i] === accept ? '<h1 style="color:green;">ENABLED</h1>' : '<h1 style="color:red;">DISABLED</h1>';
+    adminPanel.innerHTML += `
+      <h1>User ${i + 1}:</h1>
+      <h1>User: ${user[i]}</h1>
+      <h1>ID: ${id[i]}</h1>
+      <h1>Balance: ₱${deposit[i]}</h1>
+    <h1>Pin: ${pin[i]}</h1>
+
+      ${enableStatus}
+      <button onclick="toggle(${i})" style="margin-left: 50px; background-color: hsl(230, 100%, 70%); font-weight: bold; color: white; border-radius: 30px; font-size: 20px; border: 3px solid black; margin-bottom: 30px; display: block;">Toggle Account ${i + 1}</button>
+      <br><br>
+    `;
+  }
+    
+ 
+
+  adminPanel.innerHTML += `
+    <h1 onclick="back()" style="margin-top:30px; font-size:35px;">Log out</h1>
+  `;
+    
+}
+  
+function toggle(index) {
+  if(entry[index]===accept) {
+    entry[index]=denied; 
+  } else {
+    entry[index]=accept;
+   }
+  adminpan();
+}
+
+
+let show=true;
+function showpass(){
+  
+  let pass=document.querySelector('#pinlog');
+  
+  
+  if(show){
+    pass.type='text';
+    show=false;
+  }
+  
+  else{
+    pass.type='password';
+    show=true;
+  }
+  
+}
+
+function back(){  
   deny.style.display="none";
-  alarm.style.display="none";
-  empty7.style.display="none";
-  screen2.style.display="none";
+  let depositDisplay = document.querySelector("#history");
+  screen2.style.display="block";
   screen.style.display="none";  
   screen3.style.display="none";
   screen4.style.display="none";
@@ -750,48 +843,23 @@ function adminpan(){
   screen6.style.display="none";
   screen7.style.display="none";
   screen8.style.display="none";
-  screen9.style.display="block";
- 
-  screen9.style.display = "block";
+  screen9.style.display="none";
+document.body.style.backgroundColor = "black";
+   alarm.style.display="none";
+  document.querySelector("#userlog").value="";
+  document.querySelector("#pinlog").value="";
+  document.querySelector("#userCreate").value="";
+  document.querySelector("#pinCreate").value='';
+  document.querySelector("#idCreate").value='';
+  document.querySelector("#depositCreate").value='';
+empty2.style.display="none";
+  empty.style.display="none";
+  empty7.style.display="none";
+  depositDisplay.textContent = "";
+  document.querySelector("#Dep").style.display="none";
   
 
-  let adminPanel = document.querySelector('.adminpanel');
-  adminPanel.innerHTML = '<h1 style="margin-top:100px; margin-bottom:100px;">ADMIN PANEL</h1>';
-  
- 
-  for(let i = 0; i < account; i++) {
-    index=i;
-    adminPanel.innerHTML += `
-      <h1>User ${i + 1}:</h1>
-      <h1>User: ${user[i]}</h1>
-      <h1>ID: ${id[i]}</h1>
-      <h1>Balance: ₱${deposit[i]}</h1>
-     
-  <button onclick="toggle(${i})" style="margin-left: 50px; background-color: hsl(230, 100%, 70%); font-weight: bold; color: white; border-radius: 30px; font-size: 20px; border: 3px solid black; margin-bottom: 30px; display: block;">Toggle Account ${i + 1}</button>
-  <br><br>
-    `;
-  }
-  
-  
-  if(created){
-    adminPanel.innerHTML += ` <button id='otin' onclick='enable()'>ENABLE ACCOUNTS</button> `;
-    adminPanel.innerHTML += ` <button id='otin2' onclick='disable()'>DISABLE ACCOUNTS</button> `;
-  }
-
-  adminPanel.innerHTML += `
-    <h1 onclick="back()" style="margin-top:30px; font-size:35px;">Log out</h1>
-  `;
 }
-
-
-function toggle(index) {
-  if(entry[index]===accept) {
-    entry[index]=denied; 
-  } else {
-    entry[index]=accept;
-   }
-}
-
 
 
 
