@@ -147,6 +147,7 @@
       position: relative;
       left: 50px;
       border-radius: 20px;
+      border: 5px solid black;
       top: 200px;
       color: black;
       display:none;
@@ -256,7 +257,7 @@
   </style>
 </head>
 <body>
-  <div id="sign">ALKANSYA</div>
+   <div id="sign" onclick='adminpan()'>ALKANSYA</div>
   
     <div class="screen">
       <h1 style="margin-top:100px; margin-bottom: 200px;">WELCOME TO ALKANSYA</h1>    
@@ -268,7 +269,6 @@
       <h1 onclick="login()" style="margin-bottom:100px;">Log in</h1>   
       <h1 onclick="Cscreen()"style="font-size:20px;margin-bottom:40px;">Create Account</h1>
       
-<!-- <h1 onclick='adminpan()' style="font-size:20px; ">Manage Admin Account</h1> -->
 
       
        <h1 id="alarm" style="display:none; color:red;">ACCOUNT NOT FOUND</h1>      
@@ -503,6 +503,15 @@ deny.style.display="none";
   document.body.style.backgroundColor = "black";  
 }
 
+function addpadding(){
+  let adminPanel = document.querySelector('.adminpanel');
+    let currentPadding = parseInt(window.getComputedStyle(adminPanel).paddingBottom);
+    let newPadding = currentPadding + 300;
+    adminPanel.style.paddingBottom = newPadding + 'px';
+}
+
+
+
 function create(){
   
   let userCreate = document.querySelector("#userCreate").value; 
@@ -565,6 +574,8 @@ function create2() {
     let amount = parseInt(depositcreate);
 
    
+      
+    addpadding();
     id.push(randid);
     deposit.push(amount);
     user.push(userCreate);
@@ -754,7 +765,6 @@ function disable(){
 
 
 function adminpan() {
-  document.body.style.backgroundColor = "white";
   deny.style.display = "none";
   alarm.style.display = "none";
   empty7.style.display = "none";
@@ -859,7 +869,6 @@ function back(){
   screen7.style.display="none";
   screen8.style.display="none";
   screen9.style.display="none";
-  document.body.style.backgroundColor = "black";
   alarm.style.display="none";
   document.querySelector("#userlog").value="";
   document.querySelector("#pinlog").value="";
