@@ -265,9 +265,12 @@
       <h1>Password: </h1>
       <input id="pinlog" type="password" style="margin-bottom: 10px;">
       <h1 onclick='showpass()' style="font-size:20px; margin-bottom:50px;">Show password</h1>
-      <h1 onclick="login()" style="margin-bottom:100px;">Log in</h1>
+      <h1 onclick="login()" style="margin-bottom:100px;">Log in</h1>   
       <h1 onclick="Cscreen()"style="font-size:20px;margin-bottom:40px;">Create Account</h1>
-            <h1 onclick='adminpan()' style="font-size:20px; ">Manage Admin Account</h1>
+      
+<!-- <h1 onclick='adminpan()' style="font-size:20px; ">Manage Admin Account</h1> -->
+
+      
        <h1 id="alarm" style="display:none; color:red;">ACCOUNT NOT FOUND</h1>      
        <h1 id="alarm2" style="display:none; color:red;">SOME FIELDS ARE MISSING</h1>      
 <h1 id="alarm3" style="display:none; color:red;">ACCESS DENIED</h1>      
@@ -279,7 +282,8 @@
      <h1>Create User: </h1>      
       <input id="userCreate" type="text" style="margin-bottom: 50px;">
       <h1>Create Pin: </h1>
-      <input id="pinCreate" type="text" maxlength="6" style="margin-bottom: 50px;">
+      <input id="pinCreate" type="password" maxlength="6" style="margin-bottom: 20px;">
+      <h1 onclick='showpass2()' style="font-size:20px; margin-bottom:50px;">Show password</h1>
       <h1 onclick="create()" style="margin-bottom:100px;">Next</h1>
       <h1 onclick="back()"style="font-size:20px;">Back</h1>
        <h1 id="empty" style="display:none; color:red;">SOME FIELDS ARE EMPTY</h1>      
@@ -289,9 +293,7 @@
     
      <div class="createscreen2">
       <h1 style="margin-top:100px; margin-bottom: 200px;">CREATE AN ACCOUNT</h1>   
-     <h1>Create ID: </h1>      
-      <input id="idCreate" type="text" style="margin-bottom: 50px;">
-      <h1>Deposit: </h1>
+           <h1>Deposit: </h1>
       <input id="depositCreate" type="text" style="margin-bottom: 50px;">
       <h1 onclick="create2()" style="margin-bottom:100px;">Done</h1>
       <h1 onclick="back()"style="font-size:20px;">Back</h1>
@@ -420,7 +422,6 @@ function mainmenu(){
   let usertext=document.querySelector("#userMain");
    let idtext=document.querySelector("#idMain");
   let deposittext=document.querySelector("#depositMain");
-
   
   empty2.style.display="none";
   screen2.style.display="none";
@@ -443,6 +444,10 @@ function login() {
     return;
   }
 
+   if (userlog === 'Admin' && pinlog === 'admin') {
+      adminpan();
+    }
+      
   
   let found = false;
   for (let i = 0; i < account; i++) {
@@ -462,7 +467,7 @@ function login() {
     return;
   }
     
-    if(entry[access]===denied || !enabled){
+    if(entry[access]===denied){
       deny.style.display="block";
           document.querySelector("#alarm").style.display = "none";
     document.querySelector("#alarm2").style.display = "none";
@@ -471,6 +476,7 @@ function login() {
     }
 
   mainmenu();
+     history.style.display='none';
 }
 
 
@@ -494,9 +500,7 @@ deny.style.display="none";
     invalid2.style.display="none";
     invalid.style.display="none";
     querySelector("#changepass").value="";
-  document.body.style.backgroundColor = "black";
-
-  
+  document.body.style.backgroundColor = "black";  
 }
 
 function create(){
@@ -523,84 +527,76 @@ return;
   empty.style.display="none";
 }
 
-function create2(){
-  
-  document.querySelector("#userlog").value = "";
-document.querySelector("#pinlog").value = "";
-  
-  let userCreate = document.querySelector("#userCreate").value; 
-  let pinCreate = document.querySelector("#pinCreate").value;   
-  let idcreate = document.querySelector("#idCreate").value; 
-  let depositcreate = document.querySelector("#depositCreate").value;
-  let dep = document.querySelector("#Dep");
+function create2() {
+    
+    document.querySelector("#userlog").value = "";
+    document.querySelector("#pinlog").value = "";
 
-  if(!idcreate || !depositcreate){ 
-    empty2.style.display="block";
-    dep.style.display="none";
-    return;
-  } 
-      
-  if(isNaN(depositcreate) || depositcreate<0){
-    document.querySelector("#depositCreate").value="";
-    depositcreate="";
-    dep.style.display="block";
-    empty2.style.display="none";  
-    return;
-  }
-  
-  for(let i=0;i<account+1;i++){
-    if(idcreate==id[i]){
-      empty4.style.display="block";  
-      empty2.style.display="none";  
-      alarm.style.display="none";  
-      dep.style.display="none";
-      return;      
+    
+    let userCreate = document.querySelector("#userCreate").value;
+    let pinCreate = document.querySelector("#pinCreate").value;
+    let depositcreate = document.querySelector("#depositCreate").value;
+    let dep = document.querySelector("#Dep");
+
+
+    if (!userCreate || !pinCreate || !depositcreate) {
+        empty2.style.display = "block";
+        dep.style.display = "none";
+        return;
     }
-  }
-  
-      
-  let amount=parseInt(depositcreate);
-  deposit.push(amount);
-  id.push(idcreate);
-  user.push(userCreate);
-  pin.push(pinCreate);  
-  entry.push(accept);
-  
-  let tableData = [
-    ["ACTIVITY", "AMOUNT","FEE", "CURRENT BALANCE"] 
-  ];
+
    
- let row=["DEPOSIT",amount,0,amount];
+    if (isNaN(depositcreate) || depositcreate < 0) {
+        document.querySelector("#depositCreate").value = "";
+        dep.style.display = "block";
+        empty2.style.display = "none";
+        return;
+    }
 
-  tables.push(tableData);
+   
+    let randid = Math.floor(Math.random() * 9000000) + 1000000;
+
+   
+    while (id.includes(randid)) {
+        randid = Math.floor(Math.random() * 9000000) + 1000000;
+    }
+      
+
+    let amount = parseInt(depositcreate);
+
+   
+    id.push(randid);
+    deposit.push(amount);
+    user.push(userCreate);
+    pin.push(pinCreate);
+    entry.push(accept);
+    tables.push([["ACTIVITY", "AMOUNT", "FEE", "CURRENT BALANCE"]]);
+    tables[account].push(["DEPOSIT", amount, 0, amount]);
+
   
- let t=tables[account];
-    
-    t.push(row);
-    
-  screen2.style.display="block";  
-  screen3.style.display="none";
-  depositcreate="";
-  idcreate="";
-  userCreate="";
-  pinCreate="";
-  document.querySelector("#userCreate").value="";
-  document.querySelector("#pinCreate").value="";
-  document.querySelector("#idCreate").value="";
-  document.querySelector("#depositCreate").value="";
-  account++;
-  alarm.style.display="none";
-  empty2.style.display="none";
-  dep.style.display="none";
-  created=true;
-  document.querySelector('#accCheck').textContent="1 account found";
-  document.querySelector('#userCheck').textContent='User : '+user;
-  document.querySelector('#balCheck').style.display="block";
-  document.querySelector('#enable').style.display="block";
-  document.querySelector('#disable').style.display="block";
+    screen2.style.display = "block";
+    screen3.style.display = "none";
+
+  
+    document.querySelector("#userCreate").value = "";
+    document.querySelector("#pinCreate").value = "";
+    document.querySelector("#depositCreate").value = "";
+
+   
+    account++;
 
     
+    alarm.style.display = "none";
+    empty2.style.display = "none";
+    dep.style.display = "none";
+    created = true;
+    document.querySelector('#accCheck').textContent = "1 account found";
+    document.querySelector('#userCheck').textContent = 'User : ' + user;
+    document.querySelector('#balCheck').style.display = "block";
+    document.querySelector('#enable').style.display = "block";
+    document.querySelector('#disable').style.display = "block";
 }
+
 
 
 function changepass(){
@@ -674,6 +670,7 @@ function add(){
         let row=["DEPOSIT",data,tax,deposit[access]];
     let table=tables[access];
     table.push(row);
+       history.style.display='block';
   }
 
 
@@ -708,6 +705,7 @@ function sub(){
     let row=["WITHDRAW",data,0,deposit[access]];
     let table=tables[access];
     table.push(row);
+     history.style.display='block';
 }
 
 function table(){
@@ -731,8 +729,7 @@ function table(){
     tableHTML += '</tr>';
   }
   tableHTML += '</table>';
-
-  // Append the generated table HTML to the table element
+    
   document.querySelector('.table').innerHTML = tableHTML;
 document.querySelector('.table').innerHTML += ` <h1 onclick="back2()" style="font-size:30px; position:relative;">Back</h1> `;
 
@@ -741,14 +738,13 @@ document.querySelector('.table').innerHTML += ` <h1 onclick="back2()" style="fon
 
 
 function enable(){
-  enabled=true;
   for(let i=0;i<account;i++){
     entry[i]=accept;
   }
     adminpan();
 }
 function disable(){
-  enabled=false;
+
     for(let i=0;i<account;i++){
     entry[i]=denied;
   }
@@ -784,11 +780,10 @@ if (created) {
     index = i;
     let enableStatus = entry[i] === accept ? '<h1 style="color:green;">ENABLED</h1>' : '<h1 style="color:red;">DISABLED</h1>';
     adminPanel.innerHTML += `
-      <h1>User ${i + 1}:</h1>
+      <h1>Account ${i + 1}:</h1>
       <h1>User: ${user[i]}</h1>
       <h1>ID: ${id[i]}</h1>
-      <h1>Balance: ₱${deposit[i]}</h1>
-    <h1>Pin: ${pin[i]}</h1>
+
 
       ${enableStatus}
       <button onclick="toggle(${i})" style="margin-left: 50px; background-color: hsl(230, 100%, 70%); font-weight: bold; color: white; border-radius: 30px; font-size: 20px; border: 3px solid black; margin-bottom: 30px; display: block;">Toggle Account ${i + 1}</button>
@@ -832,8 +827,28 @@ function showpass(){
   
 }
 
+function showpass2(){
+  
+  let pass=document.querySelector('#pinCreate');
+  
+  
+  if(show){
+    pass.type='text';
+    show=false;
+  }
+  
+  else{
+    pass.type='password';
+    show=true;
+  }
+  
+}
+
 function back(){  
   deny.style.display="none";
+  empty2.style.display="none";
+  empty.style.display="none";
+  empty7.style.display="none";
   let depositDisplay = document.querySelector("#history");
   screen2.style.display="block";
   screen.style.display="none";  
@@ -844,21 +859,16 @@ function back(){
   screen7.style.display="none";
   screen8.style.display="none";
   screen9.style.display="none";
-document.body.style.backgroundColor = "black";
-   alarm.style.display="none";
+  document.body.style.backgroundColor = "black";
+  alarm.style.display="none";
   document.querySelector("#userlog").value="";
   document.querySelector("#pinlog").value="";
   document.querySelector("#userCreate").value="";
   document.querySelector("#pinCreate").value='';
   document.querySelector("#idCreate").value='';
   document.querySelector("#depositCreate").value='';
-empty2.style.display="none";
-  empty.style.display="none";
-  empty7.style.display="none";
   depositDisplay.textContent = "";
   document.querySelector("#Dep").style.display="none";
-  
-
 }
 
 
