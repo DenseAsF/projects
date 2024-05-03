@@ -260,7 +260,9 @@
    <div id="sign" onclick='adminpan()'>ALKANSYA</div>
   
     <div class="screen">
-      <h1 style="margin-top:100px; margin-bottom: 200px;">WELCOME TO ALKANSYA</h1>    
+      <h1 style="margin-top:100px; margin-bottom: 20px;">WELCOME TO ALKANSYA</h1>    
+      
+      <h1 style="font-size:20px; margin-bottom: 200px;">ONLINE BANKING</h1>    
       <h1>User: </h1>      
       <input id="userlog" type="text" style="margin-bottom: 50px;">
       <h1>Password: </h1>
@@ -318,14 +320,23 @@
     
     <div class="pass">
          <h1 style="position:relative; 
-       margin-top:100px; margin-bottom: 100px;">Change Your Password</h1>  
-      <h1>Enter Your New Password: </h1>
+      margin-top:100px; margin-bottom: 100px;">Change Your Pin</h1>  
+      
+      <h1>Enter Your Old Pin: </h1>
+      <input id="oldchangepass" type="text" style="margin-bottom:20px;" >
+  
+
+      <h1>Enter Your New Pin: </h1>
           <input id="changepass" type="text" >
          <h1 onclick="changeexecute()"style="font-size:50px; 
        position:relative;">Done</h1> 
      
               <h1 onclick="back2()"style="font-size:30px; 
        position:relative;">Back</h1> 
+       <h1 id="invalidpin" style="display:none; color:red;">INVALID OLD PIN</h1> 
+       <h1 id="emptywarning" style="display:none; color:red;">SOME FIELDS ARE MISSING</h1>      
+     
+      
       </div>  
     
     <div class="deposit">
@@ -500,6 +511,8 @@ deny.style.display="none";
     invalid2.style.display="none";
     invalid.style.display="none";
     querySelector("#changepass").value="";
+    document.querySelector("#oldchangepass").value="";
+
   document.body.style.backgroundColor = "black";  
 }
 
@@ -620,10 +633,27 @@ function changepass(){
 
 function changeexecute(){
   let pass=document.querySelector("#changepass").value;
+  let pass2=document.querySelector("#oldchangepass").value;
+  let warning=document.querySelector("#invalidpin");
+  let warning2=document.querySelector("#emptywarning");
+
+if(!pass || !pass2){
+warning2.style.display="block";
+  return;
+}
+  
+  if(pass2!=pin[access]){
+warning.style.display='block';
+warning2.style.display='none';
+    return;
+  }
+warning2.style.display='none';
+warning.style.display='none';
  pin[access] = pass;
   screen4.style.display="block";
   screen5.style.display="none";
   document.querySelector("#changepass").value="";
+  document.querySelector("#oldchangepass").value="";
 }
 
 function addbalance(){
