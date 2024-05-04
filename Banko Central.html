@@ -5,6 +5,7 @@
   <style>
     body {
       background-color: black;
+      font-family:arial;
     }
     
     .atm {
@@ -335,6 +336,7 @@
        position:relative;">Back</h1> 
        <h1 id="invalidpin" style="display:none; color:red;">INVALID OLD PIN</h1> 
        <h1 id="emptywarning" style="display:none; color:red;">SOME FIELDS ARE MISSING</h1>      
+       <h1 id="pinchange" style="display:none; color:red;">NEW PIN CANNOT BE YOUR OLD PIN</h1>      
      
       
       </div>  
@@ -636,17 +638,32 @@ function changeexecute(){
   let pass2=document.querySelector("#oldchangepass").value;
   let warning=document.querySelector("#invalidpin");
   let warning2=document.querySelector("#emptywarning");
+  let warning3=document.querySelector("#pinchange");
+
 
 if(!pass || !pass2){
 warning2.style.display="block";
+warning.style.display='none';
+warning3.style.display='none';
+
   return;
 }
   
   if(pass2!=pin[access]){
 warning.style.display='block';
 warning2.style.display='none';
+warning3.style.display='none';
+
     return;
   }
+
+  if (pass==pin[access]){
+    warning2.style.display="none";
+warning.style.display='none';
+    warning3.style.display='block';
+return;
+  }
+
 warning2.style.display='none';
 warning.style.display='none';
  pin[access] = pass;
@@ -866,25 +883,30 @@ function showpass(){
   }
   
 }
-
+let show1=true;
 function showpass2(){
   
   let pass=document.querySelector('#pinCreate');
   
   
-  if(show){
+  if(show1){
     pass.type='text';
-    show=false;
+    show1=false;
   }
-  
+
   else{
     pass.type='password';
-    show=true;
+    show1=true;
   }
   
 }
 
 function back(){  
+  show1=true;
+  show=true;
+  document.querySelector('#pinlog').type='password';
+  document.querySelector('#pinCreate').type='password';
+  
   deny.style.display="none";
   empty2.style.display="none";
   empty.style.display="none";
