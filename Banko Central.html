@@ -4,8 +4,8 @@
   <title>Alkansya</title>
   <style>
     body {
-      background-color: black;
-      font-family:arial;
+      background-color: #ffffff;
+      font-family:'Poppins', sans-serif;
     }
     
     .atm {
@@ -14,18 +14,58 @@
       border: 5px solid black;
     }
     
-    .screen{
-      background-color: blue;
-      height: 1200px;
+    .creation{
+      background-color: white;
+      height: 1000px;
       width: 850px;
       position: relative;
-      left: 50px;
+      left: 100px;
+      top:5px;
+      text-align: center;
+      color: black;
+      border: 6px solid hsl(230, 52%, 47%);
+      box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .creation2{
+      background-color: white;
+      height: 1000px;
+      width: 850px;
+      position: relative;
+      left: 100px;
+      top:5px;
+      text-align: center;
+      color: black;
+       border: 6px solid hsl(230, 52%, 47%);
+       box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    }
+    .createscreen {
+      background-color:#f6f6f6;
+      position: relative;
+      display:none;
+      height: 1500px;
+    }
+    
+.created{
+  background-color:#ffffff;
+      position: relative;
+      display:none;
+      height: 1500px;
+}
+    .screen{
+      background-color: blue;
+      height: 1000px;
+      width: 850px;
+      position: absolute;
+      left: 1000px;
       border-radius: 20px;
-      border: 5px solid black;
-      top: 200px;
+      border: 5px solid hsl(230, 100%, 70%);
+      top: 300px;
       text-align: center;
       color: black;
      background-color:white;
+     display:none;
+     box-shadow: 13px 13px 18px rgba(0, 0, 0, 0.3);
     }
     
     .screen input {
@@ -37,20 +77,7 @@
     }
   
   
-    .createscreen {
-      background-color: white;
-      height: 1200px;
-      width: 850px;
-      position: relative;
-      left: 50px;
-      border-radius: 20px;
-      border: 5px solid black;
-      top: 200px;
-      text-align: center;
-      color: black;;
-      display:none;
-    }
-    
+   
     .createscreen input {
       background-color: white;
       font-size: 20px;
@@ -59,17 +86,10 @@
     }
   
       .createscreen2 {
-      background-color: white;
-      height: 1200px;
-      width: 850px;
+        background-color:#f6f6f6;
       position: relative;
-      left: 50px;
-      border-radius: 20px;
-      border: 5px solid black;
-      top: 200px;
-      text-align: center;
-      color: black;
       display:none;
+      height: 1500px;
     }
     
     .createscreen2 input {
@@ -79,20 +99,31 @@
       border: 3px solid blue;
     }
   
+  #mainoption{
+     position:absolute; left:100px; top: 100px;
+      background-color:rgb(255, 255, 255); width: 1500px; height: 200px;   
+      border-radius: 40px;
+      box-shadow: 10px 10px 10px  rgb(108, 119, 142);
+  }
+    
+  #mainoption button{
+  position:relative;
+  top: 70px;
+  left: 30px;
+    display: inline-block; 
+
+    margin-left:50px;
+    background-color: hsl(0, 0%, 100%);
+    
+    font-weight:bold;
+    color:rgb(0, 0, 0);
+    border-radius:10px;
+    font-size:40px;
+    border: none;
+    
   
-    #sign {
-      position: absolute;
-      top: 70px;
-      border-radius: 10px;
-      left: ;
-      width: 960px;
-      font-size: 50px;
-      background-color: hsl(230, 100%, 70%);
-      text-align: center;
-      font-weight: bold;
-      color:white;
-    }
-  
+  }
+
      #otin{
     margin-left:20px;
     background-color: hsl(230, 100%, 70%);
@@ -116,29 +147,16 @@
   }
 
   
-  .main button{
-    margin-left:50px;
-    background-color: hsl(230, 100%, 70%);
-    font-weight:bold;
-    color:white;
-    border-radius:30px;
-    font-size:30px;
-    border:3px solid black;
-    margin-bottom:30px;
-    display:block;
-  }
+
+   
+   
+  
   
    .main{
-      background-color: white;
-      height: 1200px;
-      width: 850px;
+    background-color:#ffffff;
       position: relative;
-      left: 50px;
-      border-radius: 20px;
-      border: 5px solid black;
-      top: 200px;
-      color: black;
       display:none;
+      height: 1500px;
     }
   
   .adminpanel{
@@ -162,17 +180,18 @@
   }
   
   .pass{
-      background-color: white;
-      height: 1200px;
+    background-color: white;
+      height:800px;
       width: 850px;
       position: relative;
-      left: 50px;
+      left: 125px;
       border-radius: 20px;
-      border: 5px solid black;
-      top: 200px;
+      border: none;
+      top: 500px;
       color: black;
       display:none;
     text-align:center;
+    box-shadow: 10px 10px 10px  rgb(108, 119, 142);
     }
   .pass input {
       background-color: white;
@@ -183,35 +202,118 @@
   
   .deposit{
       background-color: white;
-      height: 1200px;
+      height:800px;
       width: 850px;
       position: relative;
-      left: 50px;
+      left: 125px;
       border-radius: 20px;
-      border: 5px solid black;
-      top: 200px;
+      border: none;
+      top: 500px;
       color: black;
       display:none;
     text-align:center;
+    box-shadow: 10px 10px 10px  rgb(108, 119, 142);
     }
+
   .deposit input {
       background-color: white;
       font-size: 20px;
       color: black;
       border: 2px solid blue;
     }
-   .withdraw{
+
+
+
+
+    .requestpanel{
       background-color: white;
-      height: 1200px;
+      height:800px;
       width: 850px;
-      position: relative;
-      left: 50px;
+      position: absolute;
+      left: 125px;
       border-radius: 20px;
-      border: 5px solid black;
-      top: 200px;
+      border: none;
+      top: 500px;
       color: black;
       display:none;
     text-align:center;
+    box-shadow: 10px 10px 10px  rgb(108, 119, 142);
+    }
+
+  .requestpanel input {
+      background-color: white;
+      font-size: 20px;
+      color: black;
+      border: 2px solid blue;
+    }
+
+    .requestpanel2{
+      background-color: white;
+      height:800px;
+      width: 850px;
+      position: absolute;
+      left: 125px;
+      border-radius: 20px;
+      border: none;
+      top: 500px;
+      color: black;
+      display:none;
+    text-align:center;
+    box-shadow: 10px 10px 10px  rgb(108, 119, 142);
+    }
+
+  .requestpanel2 input {
+      background-color: white;
+      font-size: 20px;
+      color: black;
+      border: 2px solid blue;
+    }
+
+
+    .send{
+      background-color: white;
+      height:800px;
+      width: 850px;
+      position: relative;
+      left: 125px;
+      border-radius: 20px;
+      border: none;
+      top: 500px;
+      color: black;
+      display:none;
+    text-align:center;
+    box-shadow: 10px 10px 10px    rgb(108, 119, 142);
+    }
+
+    .send2{
+      background-color: white;
+      height:800px;
+      width: 850px;
+      position: relative;
+      left: 125px;
+      border-radius: 20px;
+      border: none;
+      top: 500px;
+      color: black;
+      display:none;
+    text-align:center;
+    box-shadow: 10px 10px 10px  rgb(108, 119, 142);
+    }
+
+
+   .withdraw{
+    background-color: white;
+      height:800px;
+      width: 850px;
+      position: relative;
+      left: 125px;
+      border-radius: 20px;
+      border: none;
+      top: 500px;
+      color: black;
+      display:none;
+    text-align:center;
+    box-shadow: 10px 10px 10px  rgb(108, 119, 142);
     }
   .withdraw  input {
       background-color: white;
@@ -220,17 +322,18 @@
       border: 2px solid blue;
     }
   .table{
-      background-color: white;
-      height: 1200px;
+    background-color: white;
+      height:800px;
       width: 850px;
       position: relative;
-      left: 50px;
+      left: 125px;
       border-radius: 20px;
-      border: 5px solid black;
-      top: 200px;
+      border: none;
+      top: 500px;
       color: black;
       display:none;
     text-align:center;
+    box-shadow: 10px 10px 10px rgb(108, 119, 142);  
     }
   
   .table table{
@@ -254,72 +357,248 @@
   .adminpanel buttons{
     display:inline-block;
   }
-    
+  
   </style>
 </head>
 <body>
-   <div id="sign" onclick='adminpan()'>ALKANSYA</div>
-  
-    <div class="screen">
-      <h1 style="margin-top:100px; margin-bottom: 20px;">WELCOME TO ALKANSYA</h1>    
-      
-      <h1 style="font-size:20px; margin-bottom: 200px;">ONLINE BANKING</h1>    
-      <h1>User: </h1>      
-      <input id="userlog" type="text" style="margin-bottom: 50px;">
-      <h1>Password: </h1>
-      <input id="pinlog" type="password" style="margin-bottom: 10px;">
-      <h1 onclick='showpass()' style="font-size:20px; margin-bottom:50px;">Show password</h1>
-      <h1 onclick="login()" style="margin-bottom:100px;">Log in</h1>   
-      <h1 onclick="Cscreen()"style="font-size:20px;margin-bottom:40px;">Create Account</h1>
-      
 
+
+  <div class="mainscreen">
+   <h1 style="
+    position: absolute;   top: 200px;   border-radius: 10px;
+    left: 200px ;   width: 500px;
+    font-size: 50px;    background-color: hsl(246, 76%, 61%);  text-align: center;  
+      font-weight: bold;   color:white; 
+" onclick='mainmenu()'>ALKANSYA</h1>
+   <h1 style="  width:2500px;
+   border:1px solid grey;
+   position:absolute;
+   top:125px;
+   left:100px;"></h1>
+
+<p style=" font-size:30px; position:absolute; left:2000px; top:25px; font-weight: bold; color:rgb(56, 60, 90)" >About</p>
+<p style=" font-size:30px; position:absolute; left:1800px; top:25px;font-weight: bold;color:rgb(56, 60, 90)" >Accounts</p>
+<p style=" font-size:30px; position:absolute; left:1500px; top:25px;font-weight: bold;color:rgb(56, 60, 90)" >Admin Panel</p>
+<p style=" font-size:30px; position:absolute; left:1300px; top:25px;font-weight: bold;color:rgb(56, 60, 90)" >Fees</p>
+
+
+   <button style="font-size:40px; font-weight:bold;  border:none; background-color:white; color:rgb(50, 37, 235);
+ position:relative; width:300px; top:40px; left:2200px;" onmouseover="this.style.color='purple';" 
+ onmouseout="this.style.color='rgb(50, 37, 235)';" onclick="loginscreen()"> LOGIN</button>
+
+
+   <h1 style="position:relative; top:300px; left:200px; 
+   margin-top:100px; margin-bottom: 20px; font-size:100px;">WELCOME TO ALKANSYA</h1>  
+   <h1 style="position:relative; top:300px; left:200px;
+    margin-top:100px; margin-bottom: 20px; font-size:70px;">The Most Untrusted Bank</h1>  
+   
+   <h1 onclick="Cscreen()" style="position:relative; top:300px; left:200px; margin-top:100px; margin-bottom: 
+   20px; font-size:50px; color:rgb(72, 72, 216);">Get Started</h1>  
+   <img src="8233.jpg" style="width:1300px; length:1300px; position: relative;  top:-200px; left:1500px;">
+
+  </div>
+
+
+
+
+    <div class="screen">
+          <h1 id="alarm" style="display:none; font-size:30px; color:red;">ACCOUNT NOT FOUND</h1>      
+      <h1 id="alarm2" style="display:none; font-size:30px; color:red;">SOME FIELDS ARE MISSING</h1>      
+<h1 id="alarm3" style="display:none; font-size:30px; color:red;">ACCESS DENIED</h1>       
+      <input id="userlog" type="text" style="margin-bottom: 50px; margin-top:200px;font-size:50px; border-radius:10px;"  placeholder=" Username">
+      <input id="pinlog" type="password" style="margin-bottom: 30px; font-size:50px;border-radius:10px;" placeholder=" Password"><br>
+       
+      <button onclick='showpass()' style=" margin-bottom:50px; border:none; background-color:white;  
+      color:rgb(0, 82, 236); font-size:30px; border-radius:10px; ">Show password</button><br><br>
+      <button onclick="login()" style="font-size:50px; margin-bottom:50px; border:none; background-color:white; 
+      color:rgb(104, 93, 255); border-radius:10px; font-weight:bold;" onmouseover="this.style.color='purple';" 
+ onmouseout="this.style.color='rgb(84, 74, 235)';">Log in</button>   
+      <br>
+      <button onclick="Cscreen()"style="margin-bottom:50px; border:none; background-color:white;  
+      color: grey; font-size:30px; border-radius:10px; ">CREATE ACCOUNT</button>          
       
-       <h1 id="alarm" style="display:none; color:red;">ACCOUNT NOT FOUND</h1>      
-       <h1 id="alarm2" style="display:none; color:red;">SOME FIELDS ARE MISSING</h1>      
-<h1 id="alarm3" style="display:none; color:red;">ACCESS DENIED</h1>      
+<button style="font-size:30px; border:none; background-color:white; 
+color:black; border-radius:10px; font-weight:bold; position:absolute; left: 380px;px; top:900px;" onclick="back3()">Close</button>  
 
     </div>
     
      <div class="createscreen">
-      <h1 style="margin-top:100px; margin-bottom: 200px;">CREATE AN ACCOUNT</h1>   
-     <h1>Create User: </h1>      
-      <input id="userCreate" type="text" style="margin-bottom: 50px;">
-      <h1>Create Pin: </h1>
-      <input id="pinCreate" type="password" maxlength="6" style="margin-bottom: 20px;">
-      <h1 onclick='showpass2()' style="font-size:20px; margin-bottom:50px;">Show password</h1>
-      <h1 onclick="create()" style="margin-bottom:100px;">Next</h1>
-      <h1 onclick="back()"style="font-size:20px;">Back</h1>
+
+      <h1 style=" position:relative; top:50px;
+     border-radius: 10px;
+    left: 180px ;   width: 500px;
+    font-size: 50px;    background-color: hsl(246, 76%, 61%);  text-align: center;  
+      font-weight: bold;  margin-bottom:100px; color:white; 
+" onclick='adminpan()'>ALKANSYA</h1>
+     <h1 style="  width:2500px;
+     border:1px solid grey;
+     position:absolute;
+     top:125px;
+     left:100px;"></h1>
+  <p style=" font-size:30px; position:absolute; left:2400px; top:25px; font-weight: bold; color:rgb(56, 60, 90)" >About</p>
+  <p style=" font-size:30px; position:absolute; left:2200px; top:25px;font-weight: bold;color:rgb(56, 60, 90)" >Accounts</p>
+  <p style=" font-size:30px; position:absolute; left:1900px; top:25px;font-weight: bold;color:rgb(56, 60, 90)" >Admin Panel</p>
+  <p style=" font-size:30px; position:absolute; left: 1700px; top:25px;font-weight: bold;color:rgb(56, 60, 90)" >Fees</p>
+
+  <img src="pig2.png" style="width:1100px; height:1100px; position: absolute;  top:170px; left:1300px;">
+  <h1 style="position:relative; top:200px; left:1200px;
+  margin-top:100px; margin-bottom: 10px; font-size:70px;">Start your account</h1> 
+  <h1 style="position:absolute; top:400px; left:1200px;
+  margin-top:px; font-size:70px;">and</h1> 
+  <h1 style="position:absolute; top:450px; left:1200px;
+  margin-top:100px; margin-bottom: 20px; font-size:70px; color:rgb(20, 60, 183);">SAVE</h1> 
+
+  <div class="creation">
+   
+<br>
+      <h1 style="margin-top:100px; margin-bottom: 100px; color:rgb(30, 30, 77);">Create An Account</h1>   
+         
+      <input id="userCreate" type="text" style="margin-bottom: 50px; font-size:50px; border-radius: 10px;" 
+      placeholder=" Create Username"><br>
+    
+      <input id="pinCreate" type="password" maxlength="6" style="margin-bottom: 50px; font-size:50px;
+       border-radius: 10px;" placeholder=" Create Password">
+      <button onclick='showpass2()' style=" margin-bottom:50px; border:none; background-color:white;  
+      color:rgb(0, 82, 236); font-size:30px; border-radius:10px;  ">Show password</button>
+      <h1 onclick="create()" style="font-size:50px; margin-bottom:50px; border:none; background-color:white; 
+      color:rgb(84, 74, 235); border-radius:10px; font-weight:bold;">Next</h1>
+      <button onclick="back()"style="font-size:30px; border:none; background-color:white; 
+      color:black; border-radius:10px; font-weight:bold; position:absolute; left: 380px;px; top:900px;">Back</button>
        <h1 id="empty" style="display:none; color:red;">SOME FIELDS ARE EMPTY</h1>      
        <h1 id="warning" style="display:none; color:red;">USER NOT AVAILABLE</h1>      
-
+      </div>
      </div>
-    
-     <div class="createscreen2">
-      <h1 style="margin-top:100px; margin-bottom: 200px;">CREATE AN ACCOUNT</h1>   
-           <h1>Deposit: </h1>
-      <input id="depositCreate" type="text" style="margin-bottom: 50px;">
-      <h1 onclick="create2()" style="margin-bottom:100px;">Done</h1>
+
+
+    <div class="createscreen2">
+
+      <h1 style=" position:relative; top:50px;
+      border-radius: 10px;
+     left: 180px ;   width: 500px;
+     font-size: 50px;    background-color: hsl(246, 76%, 61%);  text-align: center;  
+       font-weight: bold;  margin-bottom:100px; color:white; 
+ " onclick='adminpan()'>ALKANSYA</h1>
+      <h1 style="  width:2500px;
+      border:1px solid grey;
+      position:absolute;
+      top:125px;
+      left:100px;"></h1>
+   <p style=" font-size:30px; position:absolute; left:2400px; top:25px; font-weight: bold; color:rgb(56, 60, 90)" >About</p>
+   <p style=" font-size:30px; position:absolute; left:2200px; top:25px;font-weight: bold;color:rgb(56, 60, 90)" >Accounts</p>
+   <p style=" font-size:30px; position:absolute; left:1900px; top:25px;font-weight: bold;color:rgb(56, 60, 90)" >Admin Panel</p>
+   <p style=" font-size:30px; position:absolute; left: 1700px; top:25px;font-weight: bold;color:rgb(56, 60, 90)" >Fees</p>
+ 
+   <img src="fuck.png" style="width:1100px; height:1100px; position: absolute;  top:170px; left:1300px;">
+   <h1 style="position:relative; top:200px; left:1200px;
+   margin-top:100px; margin-bottom: 10px; font-size:70px;">Finish up and </h1> 
+   <h1 style="position:absolute; top:400px; left:1200px;
+   margin-top:px; font-size:70px; color:rgb(58, 58, 212)">SAVE UP</h1> 
+   
+
+     <div class="creation2">
+      <h1 style="margin-top:100px; margin-bottom: 150px; font-size:60; color:rgb(40, 27, 72);">Input Your Deposit</h1>   
+           
+      <input id="depositCreate" type="text" style="margin-bottom: 50px; font-size:50px; border-radius: 10px;" 
+      placeholder=" $$$"><br>
+      <h1 onclick="create2()" style="font-size:50px; margin-bottom:50px; border:none; background-color:white; 
+      color:rgb(84, 74, 235); border-radius:10px; font-weight:bold; ">Done</h1>
       <h1 onclick="back()"style="font-size:20px;">Back</h1>
         <h1 id="empty2" style="display:none; color:red;">SOME FIELDS ARE EMPTY</h1>      
        <h1 id="Dep" style="display:none; color:red;">INVALID DEPOSIT</h1>    
               <h1 id="warning2" style="display:none; color:red;">ID ALREADY TAKEN</h1>      
      </div>  
-    
+    </div>
+
+
+<div class="created">
+
+  <h1 style=" position:relative; top:50px;
+  border-radius: 10px;
+ left: 180px ;   width: 500px;
+ font-size: 50px;    background-color: hsl(246, 76%, 61%);  text-align: center;  
+   font-weight: bold;  margin-bottom:100px; color:white; 
+" onclick='adminpan()'>ALKANSYA</h1>
+  <h1 style="  width:2500px;
+  border:1px solid grey;
+  position:absolute;
+  top:125px;
+  left:100px;"></h1>
+<p style=" font-size:30px; position:absolute; left:2400px; top:25px; font-weight: bold; color:rgb(56, 60, 90)" >About</p>
+<p style=" font-size:30px; position:absolute; left:2200px; top:25px;font-weight: bold;color:rgb(56, 60, 90)" >Accounts</p>
+<p style=" font-size:30px; position:absolute; left:1900px; top:25px;font-weight: bold;color:rgb(56, 60, 90)" >Admin Panel</p>
+<p style=" font-size:30px; position:absolute; left: 1700px; top:25px;font-weight: bold;color:rgb(56, 60, 90)" >Fees</p>
+
+
+
+<img src="Welcome New Member!.png" style="width:2500px; length:5000x; position: absolute;  left:200px; top:150px; ">
+
+<button onclick="loginscreen()" style="font-size:80px; margin-bottom:50px; border-none; background-color:rgb(104, 93, 255); 
+color:white; border-radius:10px; font-weight:bold; position: absolute; top:600px; left:300px; box-shadow: 10px 10px 10px rgb(150, 150, 150)" 
+onmouseover="this.style.backgroundColor='rgb(255, 57, 192)';" 
+onmouseout="this.style.color='white';this.style.backgroundColor='rgb(104, 93, 255)';
+this.style.border='none'">Proceed</button>
+</div>
+
+
+
+
+
+
        <div class="main">
-     <h1 id="accMain" style="margin-top:100px; margin-bottom:100px;"></h1>  
-     <h1 style="margin-bottom:50px;"id="idMain"></h1>
-     <h1 style="margin-bottom:20px;"id="userMain"></h1>
-     <h1 style="margin-bottom:100px;"id="depositMain"></h1>
+        <h1 style="
+    position: absolute;   top: px;   border-radius: 10px;
+    left: 40px ;   width: 500px;
+    font-size: 50px;    background-color: hsl(246, 76%, 61%);  text-align: center;  
+      font-weight: bold;   color:white; 
+" onclick='adminpan()'>ALKANSYA</h1>
+  <h1 style="margin-bottom:20px
+  ;position:absolute; left: 600px; font-size: 50px;"id="userMain" ></h1>
+
+   <h1 style="margin-bottom:20px
+   ;position:absolute; left: 1200px; font-size: 40px; top: 10px;"id="idMain"></h1>
+
+    <div class="mainbase" style="background-color: #c2c2dc; position: relative; border-radius: 3%; top:130px; left: 10px; height: 1200px; ">
+    
+    <div id="namebar" style=";background-color: rgb(64, 0, 255); width: 1000px; height:400px 
+    ;border-radius: 30px; position: relative; top: 100px; left: 1800px;
+    box-shadow: 10px 10px 10px rgb(108, 119, 142);+">
+    <h1 style="margin-bottom: 20x; font-size:50px; color:rgb(255, 255, 255);position:relative; top: 40px;">Balance:</h1>
+     <h1 style="font-size:100px; color:white;position:relative; top: 10px;"id="depositMain"></h1>
+    </div>
+    
+    <button onclick="request()"
+    style=";background-color: rgb(64, 0, 255); width: 550px; height:100px 
+    ;border-radius: 30px; position: relative; top: 150px; left: 2250px;
+    box-shadow: 10px 10px 10px rgb(108, 119, 142); font-size:60px; text-align: center;color:white;">Request Payment
+ </button>
+
+
+     <div id="mainoption">
      <button onclick="addbalance()" >Deposit</button>
      <button onclick="subbalance()" >Withdraw</button>
      <button onclick="changepass()" >Change Password</button>
      <button onclick="table()">Check History</button>
+     <button onclick="send()">Send</button>
+     <button style="position:absolute; left:950px; top:240px;background-color:
+     white; height: 200px; width: 500px;text-align: center; border-radius: 30px;color: black;box-shadow: 10px 10px 10px rgb(110, 127, 166);
+     justify-content: center;border: none;font-size: 30px; font-weight: bolder;">
+VIEW BANK CARD
+    </button>
+     </div>
+        <button style="font-size:20px; margin-bottom:50px; border:none; background-color:rgb(59, 45, 255); 
+           color:white; border-radius:10px; font-weight:bold; position: absolute; top:550px; 
+           left:1800px; box-shadow: 10px 10px 10px rgb(110, 127, 166)"id='history'></button>
 
-           <h1 style="font-size:20px;"id='history'></h1>
-     <h1 onclick="back()"style="font-size:30px;">Log out</h1> 
+     <button onclick="back()" style="font-size:50px; margin-bottom:50px; border:none; background-color:rgb(59, 45, 255); 
+     color:white; border-radius:10px; font-weight:bold; position: absolute; top:1000px; 
+     left:2600px; box-shadow: 10px 10px 10px rgb(110, 127, 166)" 
+     onmouseover="this.style.backgroundColor='white';this.style.color='black';" 
+     onmouseout="this.style.color='white';this.style.backgroundColor='rgb(59, 45, 255)';
+     this.style.border='none'">Log out</button> 
+    </div>
       </div>  
-    
-    <div class="pass">
+          
+    <div class="pass" style="position:absolute;">
          <h1 style="position:relative; 
       margin-top:100px; margin-bottom: 100px;">Change Your Pin</h1>  
       
@@ -341,7 +620,10 @@
       
       </div>  
     
-    <div class="deposit">
+
+
+      
+    <div class="deposit" style="position:absolute;">
          <h1 style="position:relative; 
        margin-top:100px; margin-bottom: 100px;">DEPOSIT</h1>  
        <h1 style="margin-bottom:50px;"id="amount2"></h1>
@@ -356,7 +638,7 @@
       <h1 id="invalid" style="display:none; color:red;">INVALID INPUT</h1>      
       </div>  
     
-       <div class="withdraw">
+       <div class="withdraw" style="position:absolute;">
          <h1 style="position:relative; 
              margin-top:100px; margin-bottom: 100px;">WITHDRAW</h1>  
            <h1 style="margin-bottom:50px;"id="amount1"></h1>
@@ -369,11 +651,11 @@
               <h1 onclick="back2()"style="font-size:30px; 
        position:relative;">Back</h1> 
       <h1 id="invalid2" style="display:none; color:red;">INVALID INPUT</h1>      
-
+      <h1 id="invalid123" style="display:none; color:red;">INSUFFICIENT BALANCE</h1>      
       </div>  
     
     
-    <div class='table'>
+    <div class='table' style="position:absolute;">
   <div id="table"></div>
   <h1 onclick="back2()" style="font-size:30px; position:relative;">Back</h1>
 </div>
@@ -383,9 +665,93 @@
     
       <h1 onclick="back()"style="margin-top:300px; font-size:30px;">Log out</h1> 
 
+    </div> 
+
+      <div class="send" style="position:absolute;">
+        <h1 onclick="sendconfirm()" style="position:relative; 
+        margin-top:100px; margin-bottom: 100px;">SEND</h1>  
+     <input id="accountsent" type="text" style="margin-bottom: 50px; font-size:50px; border-radius: 10px; border:5px solid rgb(113, 113, 251);" 
+     placeholder=" Enter Account Name"><br>
+     <h1 id="requestalarm1" style="display:none; font-size:30px; color:red;">ACCOUNT NOT FOUND</h1>      
+     <h1 id="requestalarm2" style="display:none; font-size:30px; color:red;">SOME FIELDS ARE MISSING</h1>  
+     <h1 id="requestalarm3" style="display:none; font-size:30px; color:red;">CANNOT SEND OWN ACCOUNT</h1>   
+    
+             <h1 onclick="back2()"style="font-size:30px; 
+      position:relative;">Back</h1> 
+      </div>
+
+      <div class="send2" style="position:absolute;">
+        <h1 onclick="sendmoney()" style="position:relative; 
+      margin-top:100px; margin-bottom: 100px;">SEND</h1>  
+     <input id="amountsent" type="text" style="margin-bottom: 50px; font-size:50px; border-radius: 10px; border:5px solid rgb(113, 113, 251);" 
+     placeholder=" Input Desired Amount"><br>
+ 
+     <h1 id="requestalarm4" style="display:none; font-size:30px; color:red;">INVALID INPUT</h1>   
+     <h1 id="requestalarm5" style="display:none; font-size:30px; color:red;">FIELD IS MISSING</h1>  
+             <h1 onclick="back2()"style="font-size:30px; 
+      position:relative;">Back</h1> 
+      </div>
+   
+      <div class="requestpanel">
+        <h1 style="position:relative; 
+        margin-top:100px; margin-bottom: 100px;">Request</h1>  
+        <input id="requestname"  type="text" style="margin-bottom: 50px; font-size:50px;box-shadow: 10px 10px 10px rgb(110, 127, 166) border-radius: 10px; border:5px solid rgb(113, 113, 251);" 
+        placeholder=" Enter Account Name"><br>
+        <h1 onclick="requestfind()" style="position:relative; 
+        margin-top:100px; margin-bottom: 100px;">NEXT</h1>  
+         <h1 id="reqalarm1" style="display:none; font-size:30px; color:red;">ACCOUNT NOT FOUND</h1>      
+         <h1 id="reqalarm2" style="display:none; font-size:30px; color:red;">SOME FIELDS ARE MISSING</h1>  
+         <h1 id="reqalarm3" style="display:none; font-size:30px; color:red;">CANNOT REQUEST OWN ACCOUNT</h1>  
+         <h1 id="reqalarm6" style="display:none; font-size:30px; color:red;">ACCOUNT IS BUSY</h1>  
+        <h1 onclick="back2()"style="font-size:30px; 
+        position:relative;">Back</h1> 
+
+      </div>
+
+      <div class="requestpanel2">
+        <h1 style="position:relative; 
+        margin-top:100px; margin-bottom: 100px;">Request</h1>  
+        <input id="requestamount"  type="text" style="margin-bottom: 50px; font-size:50px;box-shadow: 10px 10px 10px rgb(110, 127, 166) border-radius: 10px; border:5px solid rgb(113, 113, 251);" 
+        placeholder=" Enter Amount"><br>
+        <h1 onclick="requestfinal()" style="position:relative; 
+        margin-top:100px; margin-bottom: 100px;">NEXT</h1>  
+        <h1 id="reqalarm4" style="display:none; font-size:30px; color:red;">INVALID INPUT</h1>   
+        <h1 id="reqalarm5" style="display:none; font-size:30px; color:red;">FIELD IS MISSING</h1>  
+        <h1 onclick="back2()"style="font-size:30px; 
+        position:relative;">Back</h1> 
+      </div>
      
-     
+      
+  <div id="reqpanel" style="display:none; position:absolute; left:2320px; top:900px;background-color:
+   white; height: 250px; width: 500px;text-align: center; border-radius: 30px;color: black;box-shadow: 10px 10px 10px rgb(110, 127, 166)">
+    <h1 id="requesttext">FUCK</h1>
+
+    <button onclick="requestconfirm()" style="font-size:40px; margin-bottom:50px; border:none; background-color:rgb(59, 45, 255); 
+    color:white; border-radius:10px; font-weight:bold;
+    box-shadow: 10px 10px 10px rgb(110, 127, 166); position: relative; top: 30px;left: -50px;" 
+    onmouseover="this.style.backgroundColor='green';" 
+    onmouseout="this.style.color='white';this.style.backgroundColor='rgb(59, 45, 255)';
+    this.style.border='none'">YES</button>
+
+    <button onclick="denyrequest()" style="font-size:40px; margin-bottom:50px; border:none; background-color:rgb(59, 45, 255); 
+    color:white; border-radius:10px; font-weight:bold;
+    box-shadow: 10px 10px 10px rgb(110, 127, 166); position: relative; top: 30px;left: 50px;" 
+
+    onmouseover="this.style.backgroundColor='red';" 
+    onmouseout="this.style.color='white';this.style.backgroundColor='rgb(59, 45, 255)';
+    this.style.border='none'">NO</button>
+
+<h1 id="reqpanelalarm" style="display:none; font-size:30px; color:red;">INSUFFICIENT BALANCE</h1>   
+
+     </div>
+
+
+     <div class="bankcard" style="position:absolute; background-color:rgb(57, 31, 255); height: 1000px; width: 2000px;">
+<h1>otin</h1>
+     </div>
+      
   </div>
+
 </body>
 </html>
 
@@ -429,22 +795,39 @@ let id=[];
 let deposit=[];
 let entry=[];
 
+
+function loginscreen(){
+document.querySelector('.screen').style.display='block';
+document.querySelector('.mainscreen').style.filter='blur(10px)';
+document.querySelector('.mainscreen').style.display='block';
+document.querySelector('.created').style.display='none';
+}
+
 function mainmenu(){
+   document.querySelector('.mainscreen').style.display='none';
+document.querySelector('.screen').style.display='none';
+if(requested[access]===1){
+  document.querySelector('#reqpanel').style.display='block';
+  document.querySelector('#requesttext').textContent='User'+ user[accountrequest[access]] + ' Requested ₱' + requestedmoney[access];
+}
+
+
   let alarm=document.querySelector("#alarm");
-  let toptext=document.querySelector("#accMain");
+  
   let usertext=document.querySelector("#userMain");
    let idtext=document.querySelector("#idMain");
   let deposittext=document.querySelector("#depositMain");
-  
+
   empty2.style.display="none";
   screen2.style.display="none";
   screen.style.display="none";  
   screen3.style.display="none";
   screen4.style.display="block";
-  toptext.textContent="ALKANSYA BANKING";
-  usertext.textContent="User: "+ user[access];
+  
+  usertext.textContent="Welcome "+ user[access];
   idtext.textContent="ID: "+ id[access];
-  deposittext.textContent="Balance: ₱"+ deposit[access];
+  deposittext.textContent="₱ "+ deposit[access];
+
 }
 
 function login() {
@@ -496,6 +879,7 @@ function login() {
 
 
 function Cscreen(){
+  document.querySelector('.mainscreen').style.display='none';
   deny.style.display="none";
   empty7.style.display="none";
   screen.style.display="block";
@@ -504,7 +888,27 @@ function Cscreen(){
 
 
 function back2(){
-    screen6.style.display="none";
+  document.querySelector('#reqalarm3').style.display='none';
+  document.querySelector('#reqalarm1').style.display='none';
+  document.querySelector('#reqalarm2').style.display='none';
+  document.querySelector('#reqalarm6').style.display='none';
+  document.querySelector('#requestalarm4').style.display='none';
+    document.querySelector('#requestalarm5').style.display='none';
+  document.querySelector('#requestalarm4').style.display='none';
+    document.querySelector('#requestalarm5').style.display='none';
+  document.querySelector('#requestalarm1').style.display='none';
+  document.querySelector('#requestalarm2').style.display='none';
+  document.querySelector('#requestalarm3').style.display='none';
+  document.querySelector('#accountsent').value='';
+  document.querySelector('#requestamount').value='';
+  document.querySelector('#requestname').value='';
+  document.querySelector('#amountsent').value='';
+
+  document.querySelector('.requestpanel').style.display='none';
+  document.querySelector('.requestpanel2').style.display='none';
+  document.querySelector('.send2').style.display='none';
+  document.querySelector('.send').style.display='none';
+      screen6.style.display="none";
   screen5.style.display="none";
   screen7.style.display="none";
   screen4.style.display="block";
@@ -514,7 +918,7 @@ deny.style.display="none";
     invalid.style.display="none";
     querySelector("#changepass").value="";
     document.querySelector("#oldchangepass").value="";
-
+    
   document.body.style.backgroundColor = "black";  
 }
 
@@ -600,9 +1004,9 @@ function create2() {
     tables[account].push(["DEPOSIT", amount, 0, amount]);
 
   
-    screen2.style.display = "block";
+    document.querySelector(".created").style.display = "block";
     screen3.style.display = "none";
-
+    screen2.style.display = "none";
   
     document.querySelector("#userCreate").value = "";
     document.querySelector("#pinCreate").value = "";
@@ -629,8 +1033,13 @@ function changepass(){
   screen2.style.display="none";
   screen.style.display="none";  
   screen3.style.display="none";
-  screen4.style.display="none";
+  screen4=document.querySelector(".main");
+  document.querySelector(".send").style.display="none"; 
+  document.querySelector(".send2").style.display="none";
+  screen7.style.display="none"; 
   screen5.style.display="block";
+  screen6.style.display="none"; 
+  screen8.style.display='none';
 }
 
 function changeexecute(){
@@ -682,10 +1091,13 @@ amount.textContent="₱"+deposit[access];
   screen2.style.display="none";
   screen.style.display="none";  
   screen3.style.display="none";
-  screen4.style.display="none";
   screen5.style.display="none";
   screen6.style.display="block";
-  screen7.style.display="none";
+  screen7.style.display="none"; 
+  screen8.style.display='none';
+  document.querySelector(".send").style.display='none';
+  document.querySelector(".send2").style.display='none';
+
 }
 function add(){
   let depositDisplay = document.querySelector("#depositMain");
@@ -719,7 +1131,7 @@ function add(){
     
     
   deposit[access] += amount;
-  depositDisplay.textContent = "Balance: ₱" + deposit[access];
+  depositDisplay.textContent = "₱ " + deposit[access];
   screen4.style.display = "block";
   screen6.style.display = "none";
     invalid.style.display="none";
@@ -739,23 +1151,32 @@ amount.textContent="₱"+deposit[access];
   screen2.style.display="none";
   screen.style.display="none";  
   screen3.style.display="none";
-  screen4.style.display="none";
   screen5.style.display="none";
   screen6.style.display="none";
   screen7.style.display="block";
+  screen8.style.display='none';
+  document.querySelector(".send").style.display='none';
+  document.querySelector(".send2").style.display='none';
+
 }
  
 function sub(){
   let depositDisplay = document.querySelector("#depositMain");
   let data = parseFloat(document.querySelector("#subtracted").value);
-  
-  if(isNaN(data) || data<0 || data>deposit[access]) {
+  let warning = document.querySelector("#invalid123");
+  if(isNaN(data) || data<0 ) {
     invalid2.style.display="block";
+    warning.style.display="none";
+    return;
+  }
+
+  if(data>deposit[access]) {
+    warning.style.display="block";
     return;
   }
     
   deposit[access] -= data;
-  depositDisplay.textContent = "Balance: ₱" + deposit[access];
+  depositDisplay.textContent = "₱ " + deposit[access];
   screen4.style.display = "block";
   screen7.style.display = "none";
     invalid2.style.display="none";
@@ -770,12 +1191,13 @@ function table(){
   screen2.style.display="none";
   screen.style.display="none";  
   screen3.style.display="none";
-  screen4.style.display="none";
   screen5.style.display="none";
   screen6.style.display="none";
   screen7.style.display="none";
   screen8.style.display="block";
-  
+  document.querySelector(".send").style.display='none';
+  document.querySelector(".send2").style.display='none';
+
   
   let tableData = tables[access];
   let tableHTML = '<table>';
@@ -902,11 +1324,31 @@ function showpass2(){
 }
 
 function back(){  
+  document.querySelector('#reqpanelalarm').style.display='none';
+  document.querySelector('#reqalarm3').style.display='none';
+  document.querySelector('#reqalarm1').style.display='none';
+  document.querySelector('#reqalarm2').style.display='none';
+  document.querySelector('#reqalarm6').style.display='none';
+  document.querySelector('#requestalarm4').style.display='none';
+    document.querySelector('#requestalarm5').style.display='none';
+  document.querySelector('#requestalarm4').style.display='none';
+    document.querySelector('#requestalarm5').style.display='none';
+  document.querySelector('#requestalarm1').style.display='none';
+  document.querySelector('#requestalarm2').style.display='none';
+  document.querySelector('#requestalarm3').style.display='none';
+  document.querySelector('#accountsent').value='';
+  document.querySelector('#requestamount').value='';
+  document.querySelector('#requestname').value='';
+  document.querySelector('#amountsent').value='';
+
+  document.querySelector('.requestpanel').style.display='none';
+  document.querySelector('#reqpanel').style.display='none';
+  document.querySelector('.requestpanel2').style.display='none';
   show1=true;
   show=true;
   document.querySelector('#pinlog').type='password';
   document.querySelector('#pinCreate').type='password';
-  
+  document.querySelector('.mainscreen').style.display='block';
   deny.style.display="none";
   empty2.style.display="none";
   empty.style.display="none";
@@ -933,6 +1375,198 @@ function back(){
 }
 
 
+function send(){
+  document.querySelector('.send').style.display='block';
+}
 
+ function back3(){
+  document.querySelector('.screen').style.display='none';
+  document.querySelector('.mainscreen').style.filter='blur(0px)';
+ }
+
+ let accountsend;
+function sendconfirm(){
+let account = document.querySelector('#accountsent').value;
+
+if(!account){
+  document.querySelector('#requestalarm2').style.display='block';
+  document.querySelector('#requestalarm1').style.display='none';
+  
+  document.querySelector('#requestalarm3').style.display='none';
+
+  return;
+}
+
+if(user[access]==account){
+  
+  document.querySelector('#requestalarm3').style.display='block';
+  document.querySelector('#requestalarm1').style.display='none';
+  document.querySelector('#requestalarm2').style.display='none';
+  
+  return;
+}
+
+for(let i=0;i<user.length;i++){
+
+if(account==user[i]){
+  accountsend=i;
+  document.querySelector('.send').style.display='none';
+  document.querySelector('.send2').style.display='block';
+  document.querySelector('#requestalarm1').style.display='none';
+  document.querySelector('#requestalarm2').style.display='none';
+  document.querySelector('#requestalarm3').style.display='none';
+  return;
+}
+ 
+}
+document.querySelector('#requestalarm1').style.display='block';
+ document.querySelector('#requestalarm2').style.display='none';
+ document.querySelector('#requestalarm3').style.display='none';
+
+
+}
+
+
+
+
+function sendmoney(){
+  let money=parseInt(document.querySelector('#amountsent').value);
+  if(!money){
+    document.querySelector('#requestalarm4').style.display='none';
+    document.querySelector('#requestalarm5').style.display='block';
+    return;
+  }
+  if(money<0 || money>deposit[access] || isNaN(money)){
+    document.querySelector('#requestalarm4').style.display='block';
+    document.querySelector('#requestalarm5').style.display='none';
+    return;
+  }
+deposit[access]-=money;
+deposit[accountsend]+=money;
+document.querySelector("#depositMain").textContent="₱ "+deposit[access];
+
+let row=["Money Transfer","₱ "+money,"Reciepient: " + user[accountsend],"₱ "+deposit[access]];
+ let table=tables[access];
+ table.push(row);
+
+let row2=["Money Transfer","₱ "+money,"Donor: " + user[accountsend],"₱ "+deposit[accountsend]];
+ let table2=tables[accountsend];
+ table2.push(row2);
+}
+
+function request(){
+  
+  document.querySelector('.requestpanel').style.display='block';
+
+}
+
+let requested=[];
+let requestedmoney=[];
+let accountrequest=[];
+let accountreq;
+
+function requestfind(){
+  let account = document.querySelector('#requestname').value;
+
+  if(!account){
+    document.querySelector('#reqalarm2').style.display='block';
+  document.querySelector('#reqalarm1').style.display='none';
+  document.querySelector('#reqalarm3').style.display='none';
+  document.querySelector('#reqalarm6').style.display='none';
+    return;
+  }
+
+  if(user[access]==account){
+    document.querySelector('#reqalarm3').style.display='block';
+  document.querySelector('#reqalarm1').style.display='none';
+  document.querySelector('#reqalarm2').style.display='none';
+  document.querySelector('#reqalarm6').style.display='none';
+  return;
+}
+
+for(let i=0;i<user.length;i++){
+
+if(account==user[i]){
+
+  if(requested[i]==1){
+    document.querySelector('#reqalarm3').style.display='none';
+  document.querySelector('#reqalarm1').style.display='none';
+  document.querySelector('#reqalarm2').style.display='none';
+  document.querySelector('#reqalarm6').style.display='block';
+  return;
+  }
+  
+  accountreq=i;
+  document.querySelector('.requestpanel2').style.display='block';
+  document.querySelector('#reqalarm3').style.display='none';
+  document.querySelector('#reqalarm1').style.display='none';
+  document.querySelector('#reqalarm2').style.display='none';
+  document.querySelector('#reqalarm6').style.display='none';
+}
+}
+
+document.querySelector('#reqalarm1').style.display='block';
+document.querySelector('#reqalarm3').style.display='none';
+document.querySelector('#reqalarm2').style.display='none';
+document.querySelector('#reqalarm6').style.display='none';
+ return;
+}
+
+function requestfinal(){
+  let money = parseInt(document.querySelector('#requestamount').value);
+  if(isNaN(money)){
+    document.querySelector('#reqalarm4').style.display='block';
+    document.querySelector('#reqalarm5').style.display='none';
+    return;
+  }
+  if(!money){
+    return;
+    document.querySelector('#reqalarm4').style.display='none';
+    document.querySelector('#req  alarm5').style.display='block';
+  }
+  requested[accountreq]=1;
+accountrequest[accountreq]=access;
+  requestedmoney[accountreq]=money;
+  document.querySelector('#requestamount').value='';
+  document.querySelector('.requestpanel2').style.display='none';
+  document.querySelector('.requestpanel').style.display='none';
+  document.querySelector('#requestalarm4').style.display='none';
+    document.querySelector('#requestalarm5').style.display='none';
+  
+}
+
+function requestconfirm(){
+  if(deposit[access]<requestedmoney[access]){
+    document.querySelector('#reqpanelalarm').style.display='block';
+    return;
+  }
+
+  let money = requestedmoney[access];
+
+deposit[access]-=requestedmoney[access];
+deposit[accountrequest[access]]+=requestedmoney[access];
+requested[access]=0;
+document.querySelector("#depositMain").textContent="₱ "+deposit[access];
+document.querySelector('#reqpanel').style.display='none';
+document.querySelector('#reqpanelalarm').style.display='none';
+
+
+let row=["Money Request","₱ "+money,"Reciepient: " +user[accountrequest[access]],"₱ "+deposit[access]];
+ let table=tables[access];
+ table.push(row);
+
+let row2=["Money Request","₱ "+money,"Donor: " + user[access],"₱ "+deposit[accountrequest[access]]];
+ let table2=tables[accountrequest[access]];
+ table2.push(row2);
+
+
+
+}
+
+function denyrequest(){
+  requested[access]=0;
+  document.querySelector('#reqpanel').style.display='none';
+  document.querySelector('#reqpanelalarm').style.display='none';
+}
 
 </script>
