@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champion Search</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        color:white;
+    }
+</style>
+<body>
+    <input type="search" id="searchInput" onchange="yawa()" style="font-size:50px;" placeholder="Enter champion name">
+  
+
+    <div>
+
+         
+        <img src="" id="championImage" style="margin-top:50px; height: 200px; width:300px; display:none;">
+
+        <h1 id="warning" style="word-wrap: break-word; color:red; display:none; position:absolute; left:700px; 
+        top:10px;">CHAMPION NOT FOUND YAWA</h1>
+
+        <h1 id="title" style="word-wrap: break-word;"></h1>
+        
+        <h1 id="name" style="word-wrap: break-word;"></h1>
+        
+        <h1 id="blurb" style="word-wrap: break-word;"></h1>
+
+        <h1 id="stats" style="word-wrap: break-word;"></h1>
+        
+        <h1 id="info" style="word-wrap: break-word;"></h1>
+        
+    
+    </div>
+
+
+    <script>function capitalizeFirstLetter(string) {
+    if (string.length === 0) return string;
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+}
+
+
+
+function yawa() {
+    const championName2 = document.querySelector('#searchInput').value;
+    const championName = capitalizeFirstLetter(championName2);
+    
+    fetch("https://ddragon.leagueoflegends.com/cdn/12.6.1/data/en_US/champion.json")
+        .then(response => response.json())
+        .then(data => {
+            const champions = data.data;
+            const champion = champions[championName];
+
+            if (champion) {
+             
+                document.querySelector('#name').textContent = 'Title: ' + champion.title;
+
+               
+                document.querySelector('#blurb').textContent = champion.blurb;
+
+              
+                document.querySelector('#stats').textContent = 'Roles: ' + champion.tags.join(', ');
+
+                const stats = champion.stats;
+                const statString = `
+                    HP: ${stats.hp} (Per Level: ${stats.hpperlevel})<br>
+                    MP: ${stats.mp} (Per Level: ${stats.mpperlevel})<br>
+                    Movespeed: ${stats.movespeed}<br>
+                    Armor: ${stats.armor} (Per Level: ${stats.armorperlevel})<br>
+                    Spellblock: ${stats.spellblock} (Per Level: ${stats.spellblockperlevel})<br>
+                    Attack Range: ${stats.attackrange}<br>
+                    HP Regen: ${stats.hpregen} (Per Level: ${stats.hpregenperlevel})<br>
+                    MP Regen: ${stats.mpregen} (Per Level: ${stats.mpregenperlevel})<br>
+                    Crit: ${stats.crit} (Per Level: ${stats.critperlevel})<br>
+                    Attack Damage: ${stats.attackdamage} (Per Level: ${stats.attackdamageperlevel})<br>
+                    Attack Speed Offset: ${stats.attackspeedoffset}<br>
+                    Attack Speed Per Level: ${stats.attackspeedperlevel}
+                `;
+                document.querySelector('#info').innerHTML = statString;
+
+                const imageUrl = `https://ddragon.leagueoflegends.com/cdn/12.4.1/img/champion/${champion.image.full}`;
+                document.querySelector('#championImage').src = imageUrl;
+                const piste=document.querySelector('#championImage');
+                piste.style.display='block';
+                document.querySelector('#warning').style.display='none';
+            } else {
+            
+    document.querySelector('#warning').style.display='block';
+                console.error('Champion not found');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+</script>
+</body>
+</html>
